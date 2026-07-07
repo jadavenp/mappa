@@ -103,6 +103,7 @@ function wireSourceTab(root, regionId) {
   const thumbs = root.querySelectorAll('.inspector-thumb');
 
   let scale = 1;
+  let minScale = 0.05;
   let originX = 0;
   let originY = 0;
 
@@ -110,19 +111,29 @@ function wireSourceTab(root, regionId) {
     img.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
   }
 
-  function resetTransform() {
-    scale = 1;
-    originX = 0;
-    originY = 0;
+  // Fit the whole sheet in the viewport and center it. Without this, the
+  // image renders at natural size anchored top-left — which for the 1922
+  // sheet is blank margin, making it look like the image never loaded.
+  function fitImage() {
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    const iw = img.naturalWidth;
+    const ih = img.naturalHeight;
+    if (!vw || !vh || !iw || !ih) return;
+    minScale = Math.min(vw / iw, vh / ih);
+    scale = minScale;
+    originX = (vw - iw * scale) / 2;
+    originY = (vh - ih * scale) / 2;
     applyTransform();
   }
+
+  img.addEventListener('load', fitImage);
 
   function showImage(idx) {
     const entry = config.images[idx];
     img.src = `${BASE}${entry.url}`;
     captionText.textContent = entry.caption;
     locLink.href = entry.locUrl;
-    resetTransform();
     thumbs.forEach((t, i) => t.classList.toggle('active', i === idx));
   }
 
@@ -139,7 +150,7 @@ function wireSourceTab(root, regionId) {
       const cy = e.clientY - rect.top;
       const prevScale = scale;
       const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
-      scale = Math.min(8, Math.max(1, scale * factor));
+      scale = Math.min(8, Math.max(minScale, scale * factor));
       // Keep the point under the cursor fixed while zooming.
       originX = cx - ((cx - originX) * scale) / prevScale;
       originY = cy - ((cy - originY) * scale) / prevScale;
