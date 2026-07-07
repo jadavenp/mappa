@@ -428,5 +428,240 @@
     "t": "1915-01-01T00:00:00Z",
     "feature_id": "ftr_axx_40_28",
     "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_40",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_20",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_21",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_29",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_30",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_31",
+    "change": "appear"
+  },
+  {
+    "t": "1917-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_32",
+    "change": "appear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_02",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_03",
+    "change": "alter"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_04",
+    "change": "alter"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_06",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_07",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_08",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_09",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_10",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_35",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_36",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_37",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_38",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_28_39",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_01",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_04",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_05",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_06",
+    "change": "alter"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_07",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_08",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_09",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_10",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_15",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_18",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_29_19",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_01",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_02",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_03",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_04",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_05",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_06",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_07",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_08",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_09",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_10",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_11",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_12",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_22",
+    "change": "alter"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_23",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_24",
+    "change": "disappear"
+  },
+  {
+    "t": "1919-01-01T00:00:00Z",
+    "feature_id": "ftr_axx_40_28",
+    "change": "disappear"
   }
 ]

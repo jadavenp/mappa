@@ -151,6 +151,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -235,13 +245,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -398,7 +416,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
@@ -498,6 +522,110 @@
               }
             }
           ]
+        },
+        {
+          "id": "st_axx_28_03_a_b",
+          "feature_id": "ftr_axx_28_03",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 120
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_28_03_a_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_28_03_a_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "photo_studio",
+              "assertion": "asr_st_axx_28_03_a_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_28_03_a_b_lod1",
+              "state_id": "st_axx_28_03_a_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        13.2,
+                        80.4
+                      ],
+                      [
+                        29.4,
+                        80.4
+                      ],
+                      [
+                        29.4,
+                        91.4
+                      ],
+                      [
+                        13.2,
+                        91.4
+                      ],
+                      [
+                        13.2,
+                        80.4
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_28_03_a_b_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_28_03",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 28: McCain's Studio site now a wood-frame dwelling (D), footprint widened east; renovated/converted, not persisted verbatim."
+              }
+            }
+          ]
         }
       ]
     },
@@ -527,7 +655,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
@@ -616,6 +750,110 @@
                 "reviewed_by": "usr_jdavenport",
                 "reviewed_at": "2026-07-06T00:00:00Z",
                 "notes": "Footprint manually traced from 1916 Sanborn sheet 1, block 28; height_m inferred from story count (2.0) per GA1 rule (3.5 m/story, 1.5 story -> 5 m)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "st_axx_28_04_a_b",
+          "feature_id": "ftr_axx_28_04",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 120
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2.0,
+              "assertion": "asr_st_axx_28_04_a_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_28_04_a_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "lodging",
+              "assertion": "asr_st_axx_28_04_a_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_28_04_a_b_lod1",
+              "state_id": "st_axx_28_04_a_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        39.6,
+                        70.4
+                      ],
+                      [
+                        46.2,
+                        70.4
+                      ],
+                      [
+                        46.2,
+                        91.4
+                      ],
+                      [
+                        39.6,
+                        91.4
+                      ],
+                      [
+                        39.6,
+                        70.4
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_28_04_a_b_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_28_04",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 28: Lodgings building retains 2 stories but gains an attached 1-story 'Rms' wing to the south (720 1/2); footprint extended."
               }
             }
           ]
@@ -727,6 +965,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -769,13 +1017,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -890,13 +1146,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -1011,13 +1275,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -1132,13 +1404,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -1253,13 +1533,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -1453,6 +1741,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -1575,6 +1873,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -1738,6 +2046,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -1773,7 +2091,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_28_14_name",
@@ -1802,6 +2126,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 28."
+          }
+        },
+        {
+          "value": "Cigars & Tobacco",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_14_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_14",
+              "key": "name"
+            },
+            "value": "Cigars & Tobacco",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -1901,6 +2266,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2022,6 +2397,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2057,7 +2442,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_28_16_name",
@@ -2086,6 +2477,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 28."
+          }
+        },
+        {
+          "value": "Laundry",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_16_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_16",
+              "key": "name"
+            },
+            "value": "Laundry",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -2185,6 +2617,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2306,6 +2748,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2427,6 +2879,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2462,7 +2924,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_28_19_name",
@@ -2491,6 +2959,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 28."
+          }
+        },
+        {
+          "value": "Wall Paper, Linoleum, Paints & Oils",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_19_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_19",
+              "key": "name"
+            },
+            "value": "Wall Paper, Linoleum, Paints & Oils",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -2590,6 +3099,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2614,7 +3133,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Barber",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_20_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_20",
+              "key": "name"
+            },
+            "value": "Barber",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "7.5",
@@ -2711,6 +3272,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -2882,6 +3453,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3003,6 +3584,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3124,6 +3715,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3245,6 +3846,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3280,7 +3891,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_28_25_name",
@@ -3309,6 +3926,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 28."
+          }
+        },
+        {
+          "value": "Candy",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_25_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_25",
+              "key": "name"
+            },
+            "value": "Candy",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -3408,6 +4066,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3529,6 +4197,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3650,6 +4328,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3771,6 +4459,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3795,7 +4493,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Bakery",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_29_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_29",
+              "key": "name"
+            },
+            "value": "Bakery",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "10.7",
@@ -3892,6 +4632,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -3916,7 +4666,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Barber",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_30_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_30",
+              "key": "name"
+            },
+            "value": "Barber",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "11.6",
@@ -4013,6 +4805,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -4048,7 +4850,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_28_31_name",
@@ -4077,6 +4885,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 28."
+          }
+        },
+        {
+          "value": "Tailor",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_31_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_31",
+              "key": "name"
+            },
+            "value": "Tailor",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -4176,6 +5025,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -4200,7 +5059,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Variety Store",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_32_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_32",
+              "key": "name"
+            },
+            "value": "Variety Store",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "13",
@@ -4297,6 +5198,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -4321,7 +5232,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Insurance Office",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_33_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_33",
+              "key": "name"
+            },
+            "value": "Insurance Office",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "13.6",
@@ -4418,6 +5371,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -4442,7 +5405,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Ladies Furnishings",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_28_34_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_28_34",
+              "key": "name"
+            },
+            "value": "Ladies Furnishings",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "28",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "28",
         "lot": "14.2",
@@ -4539,6 +5544,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "28"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -4623,13 +5638,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -4744,13 +5767,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -4865,13 +5896,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5028,13 +6067,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5150,13 +6197,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5271,13 +6326,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5471,6 +6534,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -5593,6 +6666,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -5677,13 +6760,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5798,13 +6889,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -5961,7 +7060,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
@@ -6053,6 +7158,110 @@
               }
             }
           ]
+        },
+        {
+          "id": "st_axx_29_06_a_b",
+          "feature_id": "ftr_axx_29_06",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 120
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 3.0,
+              "assertion": "asr_st_axx_29_06_a_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_29_06_a_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "hotel",
+              "assertion": "asr_st_axx_29_06_a_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_29_06_a_b_lod1",
+              "state_id": "st_axx_29_06_a_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        -31.5,
+                        70.0
+                      ],
+                      [
+                        -18.3,
+                        70.0
+                      ],
+                      [
+                        -18.3,
+                        91.4
+                      ],
+                      [
+                        -31.5,
+                        91.4
+                      ],
+                      [
+                        -31.5,
+                        70.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 10.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_29_06_a_b_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_29_06",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 29: Parson's Hotel rebuilt/expanded to 3 stories, absorbing the adjacent Knik Hardware Co. lot; footprint enlarged east and deepened south. No color change observed on the sheet, so material is carried forward as wood_frame rather than inferred as concrete."
+              }
+            }
+          ]
         }
       ]
     },
@@ -6082,13 +7291,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -6203,13 +7420,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -6367,13 +7592,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -6530,13 +7763,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -6644,7 +7885,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_29_11_name",
@@ -6673,6 +7920,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 29."
+          }
+        },
+        {
+          "value": "Cigars & D",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_29_11_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_29_11",
+              "key": "name"
+            },
+            "value": "Cigars & D",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "29",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -6772,6 +8060,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -6893,6 +8191,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -7014,6 +8322,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -7049,7 +8367,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_29_14_name",
@@ -7078,6 +8402,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 29."
+          }
+        },
+        {
+          "value": "Jap Laundry",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_29_14_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_29_14",
+              "key": "name"
+            },
+            "value": "Jap Laundry",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "29",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -7178,6 +8543,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -7262,13 +8637,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -7462,6 +8845,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -7497,7 +8890,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_29_17_name",
@@ -7526,6 +8925,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 29."
+          }
+        },
+        {
+          "value": "Apartments",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_29_17_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_29_17",
+              "key": "name"
+            },
+            "value": "Apartments",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "29",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -7625,6 +9065,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "29"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -7667,13 +9117,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -7788,13 +9246,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -7909,13 +9375,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8030,13 +9504,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8151,13 +9633,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8272,13 +9762,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8393,13 +9891,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8514,13 +10020,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8635,13 +10149,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8756,13 +10278,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8877,13 +10407,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -8998,13 +10536,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -9119,13 +10665,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -9282,13 +10836,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -9396,7 +10958,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_40_13_name",
@@ -9425,6 +10993,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 40."
+          }
+        },
+        {
+          "value": "Moving Pictures",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_13_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_40_13",
+              "key": "name"
+            },
+            "value": "Moving Pictures",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -9524,6 +11133,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -9645,6 +11264,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -9680,7 +11309,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_40_15_name",
@@ -9709,6 +11344,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 40."
+          }
+        },
+        {
+          "value": "Bank",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_15_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_40_15",
+              "key": "name"
+            },
+            "value": "Bank",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -9808,6 +11484,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -9843,7 +11529,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_40_16_name",
@@ -9872,6 +11564,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 40."
+          }
+        },
+        {
+          "value": "Photo",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_16_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_40_16",
+              "key": "name"
+            },
+            "value": "Photo",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -9971,6 +11704,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -9995,7 +11738,49 @@
         "lat": 61.218,
         "elev_m": 31.0
       },
-      "names": [],
+      "names": [
+        {
+          "value": "Cont. Off.",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_17_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_40_17",
+              "key": "name"
+            },
+            "value": "Cont. Off.",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
+          }
+        }
+      ],
       "tags": {
         "block": "40",
         "lot": "0",
@@ -10092,6 +11877,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -10213,6 +12008,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -10334,6 +12139,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -10455,6 +12270,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -10576,6 +12401,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -10660,7 +12495,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
@@ -10752,6 +12593,110 @@
               }
             }
           ]
+        },
+        {
+          "id": "st_axx_40_22_a_b",
+          "feature_id": "ftr_axx_40_22",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 120
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_40_22_a_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_40_22_a_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "plumbing_shop",
+              "assertion": "asr_st_axx_40_22_a_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_40_22_a_b_lod1",
+              "state_id": "st_axx_40_22_a_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        26.4,
+                        -115.8
+                      ],
+                      [
+                        36.0,
+                        -115.8
+                      ],
+                      [
+                        36.0,
+                        -103.8
+                      ],
+                      [
+                        26.4,
+                        -103.8
+                      ],
+                      [
+                        26.4,
+                        -115.8
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_40_22_a_b_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_40_22",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 40: Plumbing shop renamed 'Plumbg & Sheet Metal Shop', gains an attached tent-roofed wing ('Tent Ho.') to the east; footprint extended."
+              }
+            }
+          ]
         }
       ]
     },
@@ -10781,13 +12726,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -10902,13 +12855,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -11102,6 +13063,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -11223,6 +13194,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -11258,7 +13239,13 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "assertion": {
             "id": "asr_ftr_axx_40_27_name",
@@ -11287,6 +13274,47 @@
             "reviewed_by": "usr_jdavenport",
             "reviewed_at": "2026-07-06T00:00:00Z",
             "notes": "Business name legible on 1916 Sanborn sheet 1, block 40."
+          }
+        },
+        {
+          "value": "Cyclery & D",
+          "interval": {
+            "start": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_27_name1_1922",
+            "subject": {
+              "feature_id": "ftr_axx_40_27",
+              "key": "name"
+            },
+            "value": "Cyclery & D",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3 (superseding 1916 tenant)."
           }
         }
       ],
@@ -11386,6 +13414,16 @@
                     "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_001-1.jpg",
                     "archived_copy": "data/source_images/anchorage_1916_s1.jpg",
                     "block": "40"
+                  },
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
                   }
                 ],
                 "method": "inference",
@@ -11470,13 +13508,21 @@
               "earliest": "1915-01",
               "latest": "1916-09"
             },
-            "end": null
+            "end": {
+              "value": "1919",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            }
           },
           "transition_in": {
             "kind": "constructed",
             "duration_days": 90
           },
-          "transition_out": null,
+          "transition_out": {
+            "kind": "demolished"
+          },
           "attributes": [
             {
               "key": "stories",
@@ -11559,6 +13605,1062 @@
                 "reviewed_by": "usr_jdavenport",
                 "reviewed_at": "2026-07-06T00:00:00Z",
                 "notes": "Footprint manually traced from 1916 Sanborn sheet 1, block 40; height_m inferred from story count (1.0) per GA1 rule (3.5 m/story, 1.5 story -> 5 m)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_28_40",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [],
+      "tags": {
+        "block": "28",
+        "lot": "15",
+        "use": "dwelling"
+      },
+      "states": [
+        {
+          "id": "st_axx_28_40_a",
+          "feature_id": "ftr_axx_28_40",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_28_40_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_28_40_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "dwelling",
+              "assertion": "asr_st_axx_28_40_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_28_40_a_lod1",
+              "state_id": "st_axx_28_40_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        74.3,
+                        0.0
+                      ],
+                      [
+                        79.2,
+                        0.0
+                      ],
+                      [
+                        79.2,
+                        10.0
+                      ],
+                      [
+                        74.3,
+                        10.0
+                      ],
+                      [
+                        74.3,
+                        0.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_28_40_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_28_40",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "28",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 28: small dwelling occupying the cleared Riverside Hotel/Garage lot at the block's east end; no legible name on the sheet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_29_20",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [
+        {
+          "value": "Annex",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_29_20_name1",
+            "subject": {
+              "feature_id": "ftr_axx_29_20",
+              "key": "name"
+            },
+            "value": "Annex",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "29",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3; building absent from 1916 sheet 1."
+          }
+        }
+      ],
+      "tags": {
+        "block": "29",
+        "lot": "1",
+        "use": "lodging"
+      },
+      "states": [
+        {
+          "id": "st_axx_29_20_a",
+          "feature_id": "ftr_axx_29_20",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2.0,
+              "assertion": "asr_st_axx_29_20_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_29_20_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "lodging",
+              "assertion": "asr_st_axx_29_20_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_29_20_a_lod1",
+              "state_id": "st_axx_29_20_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        -31.5,
+                        58.0
+                      ],
+                      [
+                        -18.3,
+                        58.0
+                      ],
+                      [
+                        -18.3,
+                        70.0
+                      ],
+                      [
+                        -31.5,
+                        70.0
+                      ],
+                      [
+                        -31.5,
+                        58.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_29_20_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_29_20",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 29: 'Annex' addition attached behind the rebuilt Parson's Hotel, labeled separately on the sheet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_29_21",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [
+        {
+          "value": "Needle Work",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_29_21_name1",
+            "subject": {
+              "feature_id": "ftr_axx_29_21",
+              "key": "name"
+            },
+            "value": "Needle Work",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "29",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3; building absent from 1916 sheet 1."
+          }
+        }
+      ],
+      "tags": {
+        "block": "29",
+        "lot": "46",
+        "use": "needle_work"
+      },
+      "states": [
+        {
+          "id": "st_axx_29_21_a",
+          "feature_id": "ftr_axx_29_21",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_29_21_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_29_21_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "needle_work",
+              "assertion": "asr_st_axx_29_21_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_29_21_a_lod1",
+              "state_id": "st_axx_29_21_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        -42.7,
+                        0.0
+                      ],
+                      [
+                        -37.2,
+                        0.0
+                      ],
+                      [
+                        -37.2,
+                        9.0
+                      ],
+                      [
+                        -42.7,
+                        9.0
+                      ],
+                      [
+                        -42.7,
+                        0.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_29_21_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_29_21",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "29",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 29: 'Needle Work' shop on the former U.G. Crocker Furniture lot."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_40_29",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [
+        {
+          "value": "Ford Garage",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_29_name1",
+            "subject": {
+              "feature_id": "ftr_axx_40_29",
+              "key": "name"
+            },
+            "value": "Ford Garage",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3; building absent from 1916 sheet 1."
+          }
+        },
+        {
+          "value": "Auto Accessories",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_29_name2",
+            "subject": {
+              "feature_id": "ftr_axx_40_29",
+              "key": "name"
+            },
+            "value": "Auto Accessories",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3; building absent from 1916 sheet 1."
+          }
+        }
+      ],
+      "tags": {
+        "block": "40",
+        "lot": "1",
+        "use": "garage"
+      },
+      "states": [
+        {
+          "id": "st_axx_40_29_a",
+          "feature_id": "ftr_axx_40_29",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 3.0,
+              "assertion": "asr_st_axx_40_29_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_40_29_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "garage",
+              "assertion": "asr_st_axx_40_29_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_40_29_a_lod1",
+              "state_id": "st_axx_40_29_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        0.0,
+                        -33.0
+                      ],
+                      [
+                        24.0,
+                        -33.0
+                      ],
+                      [
+                        24.0,
+                        -24.4
+                      ],
+                      [
+                        0.0,
+                        -24.4
+                      ],
+                      [
+                        0.0,
+                        -33.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 10.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_40_29_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_40_29",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 40: large 'Ford Garage / Auto Accessories' building (3 stories, apartments on 2nd & 3rd) replacing several small 1916 shops (cobbler, offices, tailors)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_40_30",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [],
+      "tags": {
+        "block": "40",
+        "lot": "7",
+        "use": "grocery"
+      },
+      "states": [
+        {
+          "id": "st_axx_40_30_a",
+          "feature_id": "ftr_axx_40_30",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_40_30_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_40_30_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "grocery",
+              "assertion": "asr_st_axx_40_30_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_40_30_a_lod1",
+              "state_id": "st_axx_40_30_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        24.0,
+                        -30.0
+                      ],
+                      [
+                        29.0,
+                        -30.0
+                      ],
+                      [
+                        29.0,
+                        -24.4
+                      ],
+                      [
+                        24.0,
+                        -24.4
+                      ],
+                      [
+                        24.0,
+                        -30.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_40_30_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_40_30",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 40: 'Gro.' (grocery) building, generic abbreviation only, no proper name legible."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_40_31",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [],
+      "tags": {
+        "block": "40",
+        "lot": "8",
+        "use": "hardware"
+      },
+      "states": [
+        {
+          "id": "st_axx_40_31_a",
+          "feature_id": "ftr_axx_40_31",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_40_31_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_40_31_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "hardware",
+              "assertion": "asr_st_axx_40_31_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_40_31_a_lod1",
+              "state_id": "st_axx_40_31_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        29.0,
+                        -34.0
+                      ],
+                      [
+                        34.0,
+                        -34.0
+                      ],
+                      [
+                        34.0,
+                        -24.4
+                      ],
+                      [
+                        29.0,
+                        -24.4
+                      ],
+                      [
+                        29.0,
+                        -34.0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_40_31_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_40_31",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 40: small 'Hardw.' unit, generic abbreviation only, no proper name legible."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_axx_40_32",
+      "type": "building",
+      "anchor": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "names": [
+        {
+          "value": "Heavy Hardware Warehouse",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "assertion": {
+            "id": "asr_ftr_axx_40_32_name1",
+            "subject": {
+              "feature_id": "ftr_axx_40_32",
+              "key": "name"
+            },
+            "value": "Heavy Hardware Warehouse",
+            "sources": [
+              {
+                "kind": "sanborn_sheet",
+                "loc_item": "sanborn00111_002",
+                "sheet": 3,
+                "year": 1922,
+                "block": "40",
+                "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+              }
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.8,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-07-06T00:00:00Z",
+            "notes": "Business name legible on 1922 Sanborn sheet 3; building absent from 1916 sheet 1."
+          }
+        }
+      ],
+      "tags": {
+        "block": "40",
+        "lot": "46",
+        "use": "warehouse"
+      },
+      "states": [
+        {
+          "id": "st_axx_40_32_a",
+          "feature_id": "ftr_axx_40_32",
+          "interval": {
+            "start": {
+              "value": "1917",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1916-10",
+              "latest": "1922-09"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1.0,
+              "assertion": "asr_st_axx_40_32_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_axx_40_32_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "warehouse",
+              "assertion": "asr_st_axx_40_32_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_axx_40_32_a_lod1",
+              "state_id": "st_axx_40_32_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        40.0,
+                        -115.8
+                      ],
+                      [
+                        50.0,
+                        -115.8
+                      ],
+                      [
+                        50.0,
+                        -100.0
+                      ],
+                      [
+                        40.0,
+                        -100.0
+                      ],
+                      [
+                        40.0,
+                        -115.8
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 3.5,
+                "height_basis": "stories*3.5",
+                "material_class": "wood_frame"
+              },
+              "assertion": {
+                "id": "asr_st_axx_40_32_a_rep",
+                "subject": {
+                  "feature_id": "ftr_axx_40_32",
+                  "key": "representation"
+                },
+                "value": "n/a",
+                "sources": [
+                  {
+                    "kind": "sanborn_sheet",
+                    "loc_item": "sanborn00111_002",
+                    "sheet": 3,
+                    "year": 1922,
+                    "block": "40",
+                    "loc_url": "https://www.loc.gov/item/sanborn00111_002/",
+                    "retrieved_from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Sanborn_Fire_Insurance_Map_from_Anchorage%2C_Anchorage_Census_Division%2C_Alaska._LOC_sanborn00111_002-3.jpg",
+                    "archived_copy": "data/source_images/anchorage_1922_s3.jpg"
+                  }
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.75,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-07-06T00:00:00Z",
+                "notes": "1922 sheet 3 block 40: 'Heavy Hardw. W.Ho.' warehouse building replacing the 1916 blacksmith shop; no story number legible on the sheet, so stories carried as 1 (fail loud, not inferred)."
               }
             }
           ]
