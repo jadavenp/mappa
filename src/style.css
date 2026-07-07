@@ -30,6 +30,96 @@ body {
   height: calc(100% - 64px);
   background: rgba(20, 20, 20, 0.9);
   border-left: 1px solid #333;
+  overflow-y: auto;
+  padding: 0;
+  transform: translateX(100%);
+  transition: transform 0.15s ease-out;
+  font-size: 13px;
+}
+
+#panel.open {
+  transform: translateX(0);
+}
+
+#panel .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  background: rgba(20, 20, 20, 0.95);
+}
+
+#panel .feature-type {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9fd0ff;
+  font-weight: 600;
+}
+
+#panel .panel-close {
+  background: none;
+  border: none;
+  color: #ddd;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#panel .panel-section {
+  padding: 10px 14px;
+  border-bottom: 1px solid #262626;
+}
+
+#panel .panel-section h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+#panel .name-entry,
+#panel .state-entry {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #2a2a2a;
+}
+
+#panel .name-entry:last-child,
+#panel .state-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+#panel .name-value {
+  font-weight: 600;
+}
+
+#panel .muted {
+  color: #999;
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+#panel .k {
+  color: #7fb8e0;
+  font-weight: 600;
+}
+
+#panel .assertion,
+#panel .rep {
+  margin-top: 4px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+#panel .attrs {
+  margin-top: 4px;
 }
 
 #timeline {
@@ -40,4 +130,69 @@ body {
   height: 64px;
   background: rgba(20, 20, 20, 0.9);
   border-top: 1px solid #333;
+}
+
+.timeline-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  gap: 14px;
+}
+
+.timeline-ticks {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 14px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.timeline-tick {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 8px;
+  background: #e07a5f;
+  transform: translateX(-1px);
+}
+
+.timeline-scrubber {
+  flex: 1;
+  accent-color: #7fb8e0;
+}
+
+.timeline-year {
+  min-width: 3.5em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: #ddd;
+}
+
+#mappa-loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #ddd;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+#mappa-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #7a2020;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 14px;
+  z-index: 1001;
+  border-bottom: 2px solid #b33;
 }
