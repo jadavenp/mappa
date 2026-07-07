@@ -1,0 +1,1991 @@
+{
+  "region_id": "reg_port_alder",
+  "frame": "local",
+  "from": "1920-01-01T00:00:00Z",
+  "to": "1975-01-01T00:00:00Z",
+  "features": [
+    {
+      "id": "ftr_bld_01",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Port Alder Town Hall",
+          "interval": {
+            "start": {
+              "value": "1921",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_01_name"
+        }
+      ],
+      "tags": {
+        "address": "1 Harbor Rd",
+        "block": "1",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_01_a",
+          "feature_id": "ftr_bld_01",
+          "interval": {
+            "start": {
+              "value": "1921",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 150
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 3,
+              "assertion": "asr_st_bld_01_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "brick",
+              "assertion": "asr_st_bld_01_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "civic",
+              "assertion": "asr_st_bld_01_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_01_a_lod1",
+              "state_id": "st_bld_01_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        40,
+                        170
+                      ],
+                      [
+                        60,
+                        170
+                      ],
+                      [
+                        60,
+                        190
+                      ],
+                      [
+                        40,
+                        190
+                      ],
+                      [
+                        40,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 12.0,
+                "height_basis": "stories*3.4",
+                "material_class": "brick"
+              },
+              "assertion": "asr_st_bld_01_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_02",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Alder General Store",
+          "interval": {
+            "start": {
+              "value": "1922",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1921",
+              "latest": "1923"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_02_name"
+        }
+      ],
+      "tags": {
+        "address": "12 Main St",
+        "block": "2",
+        "lot": "3"
+      },
+      "states": [
+        {
+          "id": "st_bld_02_a",
+          "feature_id": "ftr_bld_02",
+          "interval": {
+            "start": {
+              "value": "1922",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1921",
+              "latest": "1923"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_02_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_02_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "retail",
+              "assertion": "asr_st_bld_02_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_02_a_lod1",
+              "state_id": "st_bld_02_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        70,
+                        170
+                      ],
+                      [
+                        90,
+                        170
+                      ],
+                      [
+                        90,
+                        182
+                      ],
+                      [
+                        70,
+                        182
+                      ],
+                      [
+                        70,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_02_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_03",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Harbor Warehouse",
+          "interval": {
+            "start": {
+              "value": "1920-05",
+              "precision": "month",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_03_name"
+        }
+      ],
+      "tags": {
+        "address": "1 Wharf Ln",
+        "block": "8",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_03_a",
+          "feature_id": "ftr_bld_03",
+          "interval": {
+            "start": {
+              "value": "1920-05",
+              "precision": "month",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 120
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_03_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "concrete",
+              "assertion": "asr_st_bld_03_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "warehouse",
+              "assertion": "asr_st_bld_03_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_03_a_lod1",
+              "state_id": "st_bld_03_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        300,
+                        170
+                      ],
+                      [
+                        325,
+                        170
+                      ],
+                      [
+                        325,
+                        190
+                      ],
+                      [
+                        300,
+                        190
+                      ],
+                      [
+                        300,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 9.0,
+                "height_basis": "stories*3.4",
+                "material_class": "concrete"
+              },
+              "assertion": "asr_st_bld_03_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_09",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Port Alder Bank",
+          "interval": {
+            "start": {
+              "value": "1934",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_09_name"
+        }
+      ],
+      "tags": {
+        "address": "40 Main St",
+        "block": "3",
+        "lot": "2"
+      },
+      "states": [
+        {
+          "id": "st_bld_09_a",
+          "feature_id": "ftr_bld_09",
+          "interval": {
+            "start": {
+              "value": "1934",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 200
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_09_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "brick",
+              "assertion": "asr_st_bld_09_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "commercial",
+              "assertion": "asr_st_bld_09_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_09_a_lod1",
+              "state_id": "st_bld_09_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        60,
+                        100
+                      ],
+                      [
+                        78,
+                        100
+                      ],
+                      [
+                        78,
+                        112
+                      ],
+                      [
+                        60,
+                        112
+                      ],
+                      [
+                        60,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.0,
+                "height_basis": "stories*3.4",
+                "material_class": "brick"
+              },
+              "assertion": "asr_st_bld_09_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_10",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Port Alder Post Office",
+          "interval": {
+            "start": {
+              "value": "1941-06",
+              "precision": "month",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_10_name"
+        }
+      ],
+      "tags": {
+        "address": "55 Main St",
+        "block": "4",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_10_a",
+          "feature_id": "ftr_bld_10",
+          "interval": {
+            "start": {
+              "value": "1941-06",
+              "precision": "month",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 100
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_10_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_10_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "civic",
+              "assertion": "asr_st_bld_10_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_10_a_lod1",
+              "state_id": "st_bld_10_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        220,
+                        170
+                      ],
+                      [
+                        240,
+                        170
+                      ],
+                      [
+                        240,
+                        182
+                      ],
+                      [
+                        220,
+                        182
+                      ],
+                      [
+                        220,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 6.5,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_10_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_11",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Fishermen's Union Hall",
+          "interval": {
+            "start": {
+              "value": "1930",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1929",
+              "latest": "1931"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_11_name"
+        }
+      ],
+      "tags": {
+        "address": "70 Harbor Rd",
+        "block": "9",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_11_a",
+          "feature_id": "ftr_bld_11",
+          "interval": {
+            "start": {
+              "value": "1930",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1929",
+              "latest": "1931"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 110
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_11_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_11_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "assembly",
+              "assertion": "asr_st_bld_11_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_11_a_lod1",
+              "state_id": "st_bld_11_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        150,
+                        60
+                      ],
+                      [
+                        180,
+                        60
+                      ],
+                      [
+                        180,
+                        85
+                      ],
+                      [
+                        150,
+                        85
+                      ],
+                      [
+                        150,
+                        60
+                      ]
+                    ],
+                    [
+                      [
+                        160,
+                        68
+                      ],
+                      [
+                        160,
+                        77
+                      ],
+                      [
+                        170,
+                        77
+                      ],
+                      [
+                        170,
+                        68
+                      ],
+                      [
+                        160,
+                        68
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.5,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_11_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_12",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Fisher Chapel",
+          "interval": {
+            "start": {
+              "value": "1927",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_12_name"
+        }
+      ],
+      "tags": {
+        "address": "90 Bluff Rd",
+        "block": "10",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_12_a",
+          "feature_id": "ftr_bld_12",
+          "interval": {
+            "start": {
+              "value": "1927",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 130
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_12_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "brick",
+              "assertion": "asr_st_bld_12_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "religious",
+              "assertion": "asr_st_bld_12_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_12_a_lod1",
+              "state_id": "st_bld_12_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        260,
+                        60
+                      ],
+                      [
+                        280,
+                        60
+                      ],
+                      [
+                        280,
+                        80
+                      ],
+                      [
+                        260,
+                        80
+                      ],
+                      [
+                        260,
+                        60
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.0,
+                "height_basis": "stories*3.4",
+                "material_class": "brick"
+              },
+              "assertion": "asr_st_bld_12_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_04",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Alder Hotel",
+          "interval": {
+            "start": {
+              "value": "1923",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_04_name"
+        }
+      ],
+      "tags": {
+        "address": "20 Main St",
+        "block": "2",
+        "lot": "5"
+      },
+      "states": [
+        {
+          "id": "st_bld_04_a",
+          "feature_id": "ftr_bld_04",
+          "interval": {
+            "start": {
+              "value": "1923",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1940",
+              "precision": "year",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 100
+          },
+          "transition_out": {
+            "kind": "renovated"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_04_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_04_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "hotel",
+              "assertion": "asr_st_bld_04_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_04_a_lod1",
+              "state_id": "st_bld_04_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        100,
+                        100
+                      ],
+                      [
+                        120,
+                        100
+                      ],
+                      [
+                        120,
+                        115
+                      ],
+                      [
+                        100,
+                        115
+                      ],
+                      [
+                        100,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_04_a_rep"
+            }
+          ]
+        },
+        {
+          "id": "st_bld_04_b",
+          "feature_id": "ftr_bld_04",
+          "interval": {
+            "start": {
+              "value": "1940",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 60
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 3,
+              "assertion": "asr_st_bld_04_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "brick",
+              "assertion": "asr_st_bld_04_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "hotel",
+              "assertion": "asr_st_bld_04_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_04_b_lod1",
+              "state_id": "st_bld_04_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        100,
+                        100
+                      ],
+                      [
+                        120,
+                        100
+                      ],
+                      [
+                        120,
+                        115
+                      ],
+                      [
+                        100,
+                        115
+                      ],
+                      [
+                        100,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 11.0,
+                "height_basis": "stories*3.4",
+                "material_class": "brick"
+              },
+              "assertion": "asr_st_bld_04_b_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_05",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Port Alder Schoolhouse",
+          "interval": {
+            "start": {
+              "value": "1928",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1964-03-27",
+              "precision": "day",
+              "qualifier": "exact"
+            }
+          },
+          "assertion": "asr_ftr_bld_05_name"
+        }
+      ],
+      "tags": {
+        "address": "30 Harbor Rd",
+        "block": "6",
+        "lot": "1"
+      },
+      "states": [
+        {
+          "id": "st_bld_05_a",
+          "feature_id": "ftr_bld_05",
+          "interval": {
+            "start": {
+              "value": "1928",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1948",
+              "precision": "year",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": {
+            "kind": "renovated"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_05_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_05_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "school",
+              "assertion": "asr_st_bld_05_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_05_a_lod1",
+              "state_id": "st_bld_05_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        140,
+                        170
+                      ],
+                      [
+                        160,
+                        170
+                      ],
+                      [
+                        160,
+                        185
+                      ],
+                      [
+                        140,
+                        185
+                      ],
+                      [
+                        140,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_05_a_rep"
+            }
+          ]
+        },
+        {
+          "id": "st_bld_05_b",
+          "feature_id": "ftr_bld_05",
+          "interval": {
+            "start": {
+              "value": "1948",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1964-03-27",
+              "precision": "day",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "renovated",
+            "duration_days": 45
+          },
+          "transition_out": {
+            "kind": "destroyed",
+            "event_id": "evt_1964quake"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_05_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_05_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "school",
+              "assertion": "asr_st_bld_05_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_05_b_lod1",
+              "state_id": "st_bld_05_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        140,
+                        170
+                      ],
+                      [
+                        162,
+                        170
+                      ],
+                      [
+                        162,
+                        187
+                      ],
+                      [
+                        140,
+                        187
+                      ],
+                      [
+                        140,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 9.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_05_b_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_06",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Fisherman's Row",
+          "interval": {
+            "start": {
+              "value": "1925",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1924",
+              "latest": "1926"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_06_name"
+        }
+      ],
+      "tags": {
+        "address": "5 Wharf Ln",
+        "block": "7",
+        "lot": "2"
+      },
+      "states": [
+        {
+          "id": "st_bld_06_a",
+          "feature_id": "ftr_bld_06",
+          "interval": {
+            "start": {
+              "value": "1925",
+              "precision": "year",
+              "qualifier": "circa",
+              "earliest": "1924",
+              "latest": "1926"
+            },
+            "end": {
+              "value": "1964-03-27",
+              "precision": "day",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 80
+          },
+          "transition_out": {
+            "kind": "destroyed",
+            "event_id": "evt_1964quake"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_06_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_06_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "residential",
+              "assertion": "asr_st_bld_06_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_06_a_lod1",
+              "state_id": "st_bld_06_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        210,
+                        100
+                      ],
+                      [
+                        230,
+                        100
+                      ],
+                      [
+                        230,
+                        112
+                      ],
+                      [
+                        210,
+                        112
+                      ],
+                      [
+                        210,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_06_a_rep"
+            }
+          ]
+        },
+        {
+          "id": "st_bld_06_b",
+          "feature_id": "ftr_bld_06",
+          "interval": {
+            "start": {
+              "value": "1966",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 75
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_06_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_06_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "residential",
+              "assertion": "asr_st_bld_06_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_06_b_lod1",
+              "state_id": "st_bld_06_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        210,
+                        100
+                      ],
+                      [
+                        230,
+                        100
+                      ],
+                      [
+                        230,
+                        112
+                      ],
+                      [
+                        210,
+                        112
+                      ],
+                      [
+                        210,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 7.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_06_b_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_07",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Cannery Office",
+          "interval": {
+            "start": {
+              "value": "1932",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_07_name"
+        }
+      ],
+      "tags": {
+        "address": "2 Wharf Ln",
+        "block": "8",
+        "lot": "3"
+      },
+      "states": [
+        {
+          "id": "st_bld_07_a",
+          "feature_id": "ftr_bld_07",
+          "interval": {
+            "start": {
+              "value": "1932",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1964-03-27",
+              "precision": "day",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 60
+          },
+          "transition_out": {
+            "kind": "destroyed",
+            "event_id": "evt_1964quake"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_07_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "brick",
+              "assertion": "asr_st_bld_07_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "commercial",
+              "assertion": "asr_st_bld_07_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_07_a_lod1",
+              "state_id": "st_bld_07_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        250,
+                        170
+                      ],
+                      [
+                        270,
+                        170
+                      ],
+                      [
+                        270,
+                        185
+                      ],
+                      [
+                        250,
+                        185
+                      ],
+                      [
+                        250,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.5,
+                "height_basis": "stories*3.4",
+                "material_class": "brick"
+              },
+              "assertion": "asr_st_bld_07_a_rep"
+            }
+          ]
+        },
+        {
+          "id": "st_bld_07_b",
+          "feature_id": "ftr_bld_07",
+          "interval": {
+            "start": {
+              "value": "1967",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 90
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 2,
+              "assertion": "asr_st_bld_07_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "concrete",
+              "assertion": "asr_st_bld_07_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "commercial",
+              "assertion": "asr_st_bld_07_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_07_b_lod1",
+              "state_id": "st_bld_07_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        250,
+                        170
+                      ],
+                      [
+                        270,
+                        170
+                      ],
+                      [
+                        270,
+                        185
+                      ],
+                      [
+                        250,
+                        185
+                      ],
+                      [
+                        250,
+                        170
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 9.0,
+                "height_basis": "stories*3.4",
+                "material_class": "concrete"
+              },
+              "assertion": "asr_st_bld_07_b_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_bld_08",
+      "type": "building",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Wharf Warehouse",
+          "interval": {
+            "start": {
+              "value": "1926",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "assertion": "asr_ftr_bld_08_name"
+        }
+      ],
+      "tags": {
+        "address": "8 Wharf Ln",
+        "block": "8",
+        "lot": "4"
+      },
+      "states": [
+        {
+          "id": "st_bld_08_a",
+          "feature_id": "ftr_bld_08",
+          "interval": {
+            "start": {
+              "value": "1926",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": {
+              "value": "1964-03-27",
+              "precision": "day",
+              "qualifier": "exact"
+            }
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 70
+          },
+          "transition_out": {
+            "kind": "destroyed",
+            "event_id": "evt_1964quake"
+          },
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_08_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_08_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "warehouse",
+              "assertion": "asr_st_bld_08_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_08_a_lod1",
+              "state_id": "st_bld_08_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        300,
+                        100
+                      ],
+                      [
+                        322,
+                        100
+                      ],
+                      [
+                        322,
+                        115
+                      ],
+                      [
+                        300,
+                        115
+                      ],
+                      [
+                        300,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_08_a_rep"
+            }
+          ]
+        },
+        {
+          "id": "st_bld_08_b",
+          "feature_id": "ftr_bld_08",
+          "interval": {
+            "start": {
+              "value": "1965",
+              "precision": "year",
+              "qualifier": "exact"
+            },
+            "end": null
+          },
+          "transition_in": {
+            "kind": "constructed",
+            "duration_days": 50
+          },
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 1,
+              "assertion": "asr_st_bld_08_b_rep"
+            },
+            {
+              "key": "material",
+              "value": "wood_frame",
+              "assertion": "asr_st_bld_08_b_rep"
+            },
+            {
+              "key": "use",
+              "value": "warehouse",
+              "assertion": "asr_st_bld_08_b_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_bld_08_b_lod1",
+              "state_id": "st_bld_08_b",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        300,
+                        100
+                      ],
+                      [
+                        322,
+                        100
+                      ],
+                      [
+                        322,
+                        115
+                      ],
+                      [
+                        300,
+                        115
+                      ],
+                      [
+                        300,
+                        100
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 8.0,
+                "height_basis": "stories*3.4",
+                "material_class": "wood_frame"
+              },
+              "assertion": "asr_st_bld_08_b_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_rd_01",
+      "type": "road",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Main Street",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "assertion": "asr_ftr_rd_01_name"
+        }
+      ],
+      "tags": {},
+      "states": [
+        {
+          "id": "st_rd_01_a",
+          "feature_id": "ftr_rd_01",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "transition_in": null,
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 0,
+              "assertion": "asr_st_rd_01_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "paved",
+              "assertion": "asr_st_rd_01_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "road",
+              "assertion": "asr_st_rd_01_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_rd_01_a_lod1",
+              "state_id": "st_rd_01_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        20,
+                        145
+                      ],
+                      [
+                        340,
+                        145
+                      ],
+                      [
+                        340,
+                        155
+                      ],
+                      [
+                        20,
+                        155
+                      ],
+                      [
+                        20,
+                        145
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 0.2,
+                "height_basis": "curb_reveal",
+                "material_class": "paved"
+              },
+              "assertion": "asr_st_rd_01_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_rd_02",
+      "type": "road",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Harbor Road",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "assertion": "asr_ftr_rd_02_name"
+        }
+      ],
+      "tags": {},
+      "states": [
+        {
+          "id": "st_rd_02_a",
+          "feature_id": "ftr_rd_02",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "transition_in": null,
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 0,
+              "assertion": "asr_st_rd_02_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "paved",
+              "assertion": "asr_st_rd_02_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "road",
+              "assertion": "asr_st_rd_02_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_rd_02_a_lod1",
+              "state_id": "st_rd_02_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        185,
+                        10
+                      ],
+                      [
+                        195,
+                        10
+                      ],
+                      [
+                        195,
+                        290
+                      ],
+                      [
+                        185,
+                        290
+                      ],
+                      [
+                        185,
+                        10
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 0.2,
+                "height_basis": "curb_reveal",
+                "material_class": "paved"
+              },
+              "assertion": "asr_st_rd_02_a_rep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ftr_water_01",
+      "type": "water",
+      "anchor": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 12.0
+      },
+      "names": [
+        {
+          "value": "Port Alder Harbor",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "assertion": "asr_ftr_water_01_name"
+        }
+      ],
+      "tags": {},
+      "states": [
+        {
+          "id": "st_water_01_a",
+          "feature_id": "ftr_water_01",
+          "interval": {
+            "start": null,
+            "end": null
+          },
+          "transition_in": null,
+          "transition_out": null,
+          "attributes": [
+            {
+              "key": "stories",
+              "value": 0,
+              "assertion": "asr_st_water_01_a_rep"
+            },
+            {
+              "key": "material",
+              "value": "water",
+              "assertion": "asr_st_water_01_a_rep"
+            },
+            {
+              "key": "use",
+              "value": "water",
+              "assertion": "asr_st_water_01_a_rep"
+            }
+          ],
+          "representations": [
+            {
+              "id": "rep_st_water_01_a_lod1",
+              "state_id": "st_water_01_a",
+              "lod": 1,
+              "kind": "extrusion",
+              "payload": {
+                "footprint": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        350,
+                        0
+                      ],
+                      [
+                        400,
+                        0
+                      ],
+                      [
+                        400,
+                        300
+                      ],
+                      [
+                        350,
+                        300
+                      ],
+                      [
+                        350,
+                        0
+                      ]
+                    ]
+                  ]
+                },
+                "height_m": 0.0,
+                "height_basis": "mean_sea_level",
+                "material_class": "water"
+              },
+              "assertion": "asr_st_water_01_a_rep"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
