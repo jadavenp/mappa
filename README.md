@@ -12,6 +12,10 @@ To deploy: `python3 bake/bake.py && npm run build`, then push the contents of `d
 
 ## Verified
 
-End-to-end verified in Safari against `npm run preview`: `bake/` tests 28/28, timeline scrub sweep across 1920/1935/1950/1963.9/1964.5/1970/1975 matches `public/v0/timeline.json` exactly (visible-mesh count grows to 15, drops by 4 at the 1964 quake, recovers to 14 by 1970), building extrusions sit base-at-ground with correct height, and the default camera is centered on the town at the region's configured height/heading/pitch. Screenshots (`docs/verify/`, captured via an in-page `CreateScreenshotUsingRenderTargetAsync` render, no OS screen-recording permission needed) confirm the scene renders upright and lit, not blank:
+End-to-end verified in Safari against `npm run preview`: `bake/` tests 33/33, timeline scrub sweep across 1920/1935/1950/1963.9/1964.5/1970/1975 matches `public/v0/reg_port_alder/timeline.json` exactly (visible-mesh count grows to 15, drops by 4 at the 1964 quake, recovers to 14 by 1970), building extrusions sit base-at-ground with correct height, and the default camera is centered on the town at the region's configured height/heading/pitch. Screenshots (`docs/verify/`, captured via an in-page `CreateScreenshotUsingRenderTargetAsync` render, no OS screen-recording permission needed) confirm the scene renders upright and lit, not blank:
 
 ![Port Alder, 1950](docs/verify/1950.png)
+
+`reg_anchorage_downtown` verified the same way: probe times derived directly from `public/v0/reg_anchorage_downtown/timeline.json`'s cumulative appear/alter/disappear entries and asserted exact against `getState().visibleCount` — 0 before 1915, 86 from 1915, 93 through the 1917–1918 construction window, dropping to 57 after the 1919 demolition wave (holds through 1923). `webglVersion` is 2, `meshCount` is 97 (matching the baked state count), and the two survey-event tick marks (Sept 1916, Sept 1922) render in the timeline bar. The region picker `<select>` lists both regions with the URL-selected one marked `selected`. The "Data" inspector opens over the scene, its Source tab serves both the 1916 and 1922 Sanborn sheets (each confirmed 200 OK) with LoC attribution, its JSON tab's `<pre>` contains `"reg_anchorage_downtown"`, and Escape closes the overlay:
+
+![Anchorage inspector, 1916 sheet](docs/verify/anchorage/inspector-source.png)
