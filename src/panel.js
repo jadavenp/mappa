@@ -4,6 +4,11 @@
 // the picked building; click on empty space dismisses.
 
 import { PointerEventTypes } from '@babylonjs/core/Events/pointerEvents';
+// Side-effect import: registers EffectLayer._SceneComponentInitialization on
+// the Scene. Without this, `new HighlightLayer(...)` below throws
+// "EffectLayerSceneComponent needs to be imported before..." at runtime —
+// Babylon's modular ES build requires this registration import explicitly.
+import '@babylonjs/core/Layers/effectLayerSceneComponent';
 import { HighlightLayer } from '@babylonjs/core/Layers/highlightLayer';
 import { Color3 } from '@babylonjs/core/Maths/math.color';
 

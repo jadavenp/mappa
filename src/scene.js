@@ -194,10 +194,17 @@ export function buildFeatures(scene, sceneWindow) {
     groundMat.specularColor = new Color3(0, 0, 0);
     ground.material = groundMat;
 
-    scene.activeCamera.target = new Vector3(
-      (minX + maxX) / 2,
-      0,
-      (minZ + maxZ) / 2
+    // Retarget onto the town center without letting ArcRotateCamera's
+    // default setTarget() silently rebuild alpha/beta/radius from the
+    // pre-retarget eye position (that clobbers the region's configured
+    // height_m/heading_deg/pitch_deg with whatever falls out of a camera
+    // that was still orbiting Vector3.Zero()). cloneAlphaBetaRadius=true
+    // keeps the configured framing and only moves the look-at point.
+    scene.activeCamera.setTarget(
+      new Vector3((minX + maxX) / 2, 0, (minZ + maxZ) / 2),
+      false,
+      false,
+      true
     );
   }
 

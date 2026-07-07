@@ -79,6 +79,7 @@ async function boot() {
           t: tl.getTime(),
           meshCount: entries.length,
           visibleCount,
+          webglVersion: scene.getEngine().webGLVersion,
         };
       },
     };
