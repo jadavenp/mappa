@@ -1,0 +1,41 @@
+[
+  {
+    "id": "evt_1916survey",
+    "kind": "survey",
+    "name": "Sanborn Fire Insurance Survey (Anchorage, Sheet 1)",
+    "time": {
+      "value": "1916-09-15T12:00:00-09:00",
+      "precision": "instant",
+      "qualifier": "exact"
+    },
+    "extent": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -116.0,
+            -140.0
+          ],
+          [
+            90.0,
+            -140.0
+          ],
+          [
+            90.0,
+            92.0
+          ],
+          [
+            -116.0,
+            92.0
+          ],
+          [
+            -116.0,
+            -140.0
+          ]
+        ]
+      ]
+    },
+    "media": [],
+    "description": "Sanborn Map Company fire-insurance survey of downtown Anchorage, sheet 1, published September 1916; documents blocks 28, 29, 30, 38, 39, 40 (3rd\u20135th Ave, G\u2013K St)."
+  }
+]

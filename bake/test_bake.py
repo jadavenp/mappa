@@ -234,7 +234,7 @@ class TestFullBakeOnRealSource(unittest.TestCase):
         state_count = sum(len(f["states"]) for f in scene["features"])
         self.assertEqual(state_count, 20)
         self.assertEqual(len(self.region["events"]), 1)
-        self.assertEqual(len(self.result["regions"]), 1)
+        self.assertEqual(len(self.result["regions"]), 2)
 
     def test_timeline_is_sorted(self):
         ts = [e["t"] for e in self.region["timeline"]]
