@@ -63,7 +63,7 @@ total Features after reconcile.
 - **South-row rear outbuildings, blocks 28 (28_11/12/15/17/18/22/23/24/26/27/28)** — smaller sheds/outbuildings behind the south (4th Ave) frontage row were left PERSISTED by default (identical position, no visible evidence of clearing) per the methodology's ambiguous-outbuilding rule.
 - **Block 29 rear outbuildings (29_03 PERSISTED vs 29_05/07/08/18/19 GONE)** — the ones sitting inside the newly-expanded Parson's Hotel/vacant-lot footprints were called GONE; the one adjacent to the persisted dwelling (29_02→29_03) was left PERSISTED.
 - **Block 40 rear outbuildings** — north-row rear (40_02/03/06/10, behind the new Ford Garage/Gro/Hardw complex) called GONE (footprint conflict with new construction); south-row rear (40_18/20/25) left PERSISTED, 40_23 called GONE (overlaps the Plumbing shop's new tent-wing addition).
-- **Parson's Hotel material** — 1922 crop shows no fill color on the expanded hotel outline (unusual for a wood-frame Sanborn entry); rather than infer `concrete`, `wood_frame` was carried forward from the 1916 state (fail loud, not faked).
+- **Parson's Hotel material** — 1922 crop shows the expanded hotel outline in the same buff/yellow (wood-frame) tint as neighboring structures; reviewer confirmed the wood_frame value from color evidence (initial "no color evidence" phrasing corrected per review) (unusual for a wood-frame Sanborn entry); rather than infer `concrete`, `wood_frame` was carried forward from the 1916 state (fail loud, not faked).
 - **Gro./Hardw. small units, block 40** — generic abbreviations only, not treated as legible proper names; `names: []` per GA1's "do not invent" rule.
 
 ## Verification evidence
