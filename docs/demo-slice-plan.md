@@ -2,7 +2,7 @@
 
 ## Context
 
-Canonical spec: `/Users/jamesdavenport/Downloads/mappa-reconciliation-output/mappa-consolidated-spec-v0.5.md` (spec v0.5) and `mappa-implementation-plan-v2.md`. This repo implements a **client-only static demo slice** — tickets A1/C1/C2-lite — with three approved deviations from the letter of those docs:
+Canonical spec: the Mappa spec-reconciliation folder — `mappa-consolidated-spec-v0.5.md` (spec v0.5) and `mappa-implementation-plan-v2.md` (not included in this repo). This repo implements a **client-only static demo slice** — tickets A1/C1/C2-lite — with three approved deviations from the letter of those docs:
 
 1. No FastAPI/PostGIS — data pre-baked to static JSON (the spec §11 swap path; baked vs live fulfillment is interchangeable by design).
 2. Fictional demo region ("Port Alder") authored **directly in region-local meters** — no WGS84 source data, no projection module.
@@ -25,7 +25,7 @@ The demo proves the render + temporal-scrub + swap-seam loop with hand-authored 
 
 ## Task 1 — Vite + Babylon scaffold
 
-Create the project scaffold in `/Users/jamesdavenport/Projects/mappa` (repo already `git init`ed, plan + .gitignore present):
+Create the project scaffold in the repo root (repo already `git init`ed, plan + .gitignore present):
 
 - `npm create vite@latest . -- --template vanilla` (adapt to non-empty dir; plain vanilla JS, no TS).
 - `npm install @babylonjs/core earcut`.
