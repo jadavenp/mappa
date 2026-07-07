@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
-"""Bake data/source/port-alder.json into the four public/v0/*.json files that
-the Babylon client consumes, per spec/contract.md.
+"""Bake every data/source/*.json region file into the multi-region
+public/v0/ layout the Babylon client consumes, per spec/contract.md:
+
+  public/v0/regions.json                 -- array, one entry per region
+  public/v0/{region_id}/scene.json
+  public/v0/{region_id}/timeline.json
+  public/v0/{region_id}/events.json
 
 stdlib-only Python 3. Run as:  python3 bake/bake.py
 
-Steps (see spec/contract.md §5 for the exact validation contract):
+Steps (see spec/contract.md §5 for the exact validation contract), per
+source file:
   1. Load the source dataset.
   2. Resolve every FuzzyDate/Interval (G2).
   3. Validate per-Feature State non-overlap (G4) — fail loud, name the feature.
   4. Normalize footprint/extent ring winding (G9).
   5. Derive the timeline change list.
-  6. Write public/v0/{regions,scene,timeline,events}.json.
+  6. Write public/v0/{region_id}/{scene,timeline,events}.json.
+Then aggregate every region's Region object into public/v0/regions.json,
+failing loud on a duplicate region id.
 """
+import glob
 import json
 import os
 import sys
@@ -21,7 +30,8 @@ import fuzzydate as fd
 import geometry as geom
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SOURCE_PATH = os.path.join(REPO_ROOT, "data", "source", "port-alder.json")
+SOURCE_DIR = os.path.join(REPO_ROOT, "data", "source")
+SOURCE_PATH = os.path.join(SOURCE_DIR, "port-alder.json")  # kept for tests/back-compat
 OUT_DIR = os.path.join(REPO_ROOT, "public", "v0")
 
 RENOVATION_KINDS = ("renovated", "moved")
@@ -37,6 +47,11 @@ class BakeError(ValueError):
 def load_source(path=SOURCE_PATH):
     with open(path) as f:
         return json.load(f)
+
+
+def source_paths(source_dir=SOURCE_DIR):
+    """Every region source file, in a deterministic (sorted) order."""
+    return sorted(glob.glob(os.path.join(source_dir, "*.json")))
 
 
 def validate_no_overlap(feature):
@@ -183,10 +198,6 @@ def derive_timeline(source):
     return entries
 
 
-def bake_regions(source):
-    return [source["region"]]
-
-
 def bake_events(source):
     events_out = []
     for event in source["events"]:
@@ -202,20 +213,52 @@ def write_json(path, data):
         f.write("\n")
 
 
-def bake(source_path=SOURCE_PATH, out_dir=OUT_DIR):
-    source = load_source(source_path)
-
+def bake_one(source, out_dir):
+    """Bake a single region's source dict, writing its per-region files
+    under out_dir/{region_id}/. Returns the per-region result dict (region,
+    scene, timeline, events)."""
     scene, _resolved_by_id = bake_scene(source)
     timeline = derive_timeline(source)
-    regions = bake_regions(source)
+    region = source["region"]
     events = bake_events(source)
 
-    write_json(os.path.join(out_dir, "regions.json"), regions)
-    write_json(os.path.join(out_dir, "scene.json"), scene)
-    write_json(os.path.join(out_dir, "timeline.json"), timeline)
-    write_json(os.path.join(out_dir, "events.json"), events)
+    region_dir = os.path.join(out_dir, region["id"])
+    write_json(os.path.join(region_dir, "scene.json"), scene)
+    write_json(os.path.join(region_dir, "timeline.json"), timeline)
+    write_json(os.path.join(region_dir, "events.json"), events)
 
-    return {"regions": regions, "scene": scene, "timeline": timeline, "events": events}
+    return {"region": region, "scene": scene, "timeline": timeline, "events": events}
+
+
+def bake(paths=None, out_dir=OUT_DIR):
+    """Bake every region source file (default: all of data/source/*.json)
+    into the multi-region public/v0/ layout. Fails loud (BakeError) on an
+    unknown/duplicate region id — never silently overwrites or merges."""
+    if paths is None:
+        paths = source_paths()
+    if not paths:
+        raise BakeError(f"no source files found under {SOURCE_DIR!r}")
+
+    regions = []
+    seen_ids = set()
+    results = {}
+    for path in paths:
+        source = load_source(path)
+        result = bake_one(source, out_dir)
+        region = result["region"]
+        region_id = region["id"]
+        if region_id in seen_ids:
+            raise BakeError(
+                f"duplicate region id {region_id!r} (from {path!r}) — "
+                f"every source file must define a distinct region.id"
+            )
+        seen_ids.add(region_id)
+        regions.append(region)
+        results[region_id] = result
+
+    write_json(os.path.join(out_dir, "regions.json"), regions)
+
+    return {"regions": regions, "by_region": results}
 
 
 if __name__ == "__main__":
@@ -225,8 +268,9 @@ if __name__ == "__main__":
         print(f"BAKE FAILED: {e}", file=sys.stderr)
         sys.exit(1)
 
-    feature_count = len(result["scene"]["features"])
-    state_count = sum(len(f["states"]) for f in result["scene"]["features"])
-    print(f"baked {feature_count} features, {state_count} states, "
-          f"{len(result['timeline'])} timeline entries, "
-          f"{len(result['events'])} events -> {OUT_DIR}")
+    for region_id, r in result["by_region"].items():
+        feature_count = len(r["scene"]["features"])
+        state_count = sum(len(f["states"]) for f in r["scene"]["features"])
+        print(f"baked {region_id}: {feature_count} features, {state_count} states, "
+              f"{len(r['timeline'])} timeline entries, {len(r['events'])} events")
+    print(f"regions.json: {len(result['regions'])} region(s) -> {OUT_DIR}")

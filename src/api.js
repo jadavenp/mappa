@@ -19,18 +19,21 @@ async function fetchJson(relativePath) {
   return res.json();
 }
 
+// regions.json stays at the top level (GA2) — one array covering every
+// region, used both at boot and by the region picker.
 export function getRegions() {
   return fetchJson('regions.json');
 }
 
-export function getSceneWindow() {
-  return fetchJson('scene.json');
+// Everything else is per-region, at /v0/{regionId}/... (GA2).
+export function getSceneWindow(regionId) {
+  return fetchJson(`${regionId}/scene.json`);
 }
 
-export function getTimeline() {
-  return fetchJson('timeline.json');
+export function getTimeline(regionId) {
+  return fetchJson(`${regionId}/timeline.json`);
 }
 
-export function getEvents() {
-  return fetchJson('events.json');
+export function getEvents(regionId) {
+  return fetchJson(`${regionId}/events.json`);
 }

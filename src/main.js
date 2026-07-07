@@ -8,10 +8,12 @@ import { initTimeline } from './timeline.js';
 import { initPanel } from './panel.js';
 import { CreateScreenshotUsingRenderTargetAsync } from '@babylonjs/core/Misc/screenshotTools';
 
-function showLoading() {
+const DEFAULT_REGION_ID = 'reg_port_alder';
+
+function showLoading(label) {
   const el = document.createElement('div');
   el.id = 'mappa-loading';
-  el.textContent = 'Loading Port Alder…';
+  el.textContent = `Loading ${label}…`;
   document.body.appendChild(el);
   return el;
 }
@@ -28,29 +30,82 @@ function showError(message) {
   document.body.appendChild(el);
 }
 
+// GA3: the picker's only job is to set ?region=<id> and let the browser do
+// a full page reload — no in-place scene teardown/rebuild.
+function initRegionPicker(container, regions, currentRegionId) {
+  container.innerHTML = '';
+
+  const label = document.createElement('label');
+  label.setAttribute('for', 'region-picker');
+  label.textContent = 'Region';
+
+  const select = document.createElement('select');
+  select.id = 'region-picker';
+  for (const region of regions) {
+    const opt = document.createElement('option');
+    opt.value = region.id;
+    opt.textContent = region.name || region.id;
+    if (region.id === currentRegionId) opt.selected = true;
+    select.appendChild(opt);
+  }
+
+  select.addEventListener('change', () => {
+    const params = new URLSearchParams(window.location.search);
+    params.set('region', select.value);
+    window.location.search = params.toString();
+  });
+
+  container.appendChild(label);
+  container.appendChild(select);
+}
+
 async function boot() {
-  const loadingEl = showLoading();
+  const requestedRegionId =
+    new URLSearchParams(window.location.search).get('region') || DEFAULT_REGION_ID;
+
+  const loadingEl = showLoading(requestedRegionId);
 
   let regions;
+  try {
+    regions = await getRegions();
+  } catch (err) {
+    showError(`Failed to load data: ${err.message}`);
+    throw err;
+  }
+
+  const region = regions.find((r) => r.id === requestedRegionId);
+  if (!region) {
+    const validIds = regions.map((r) => r.id).join(', ');
+    showError(
+      `Unknown region "${requestedRegionId}" — valid regions: ${validIds}`
+    );
+    throw new Error(`region "${requestedRegionId}" not found`);
+  }
+
+  const topbarEl = document.getElementById('topbar');
+  initRegionPicker(topbarEl, regions, region.id);
+
   let sceneWindow;
   let timeline;
   let events;
   try {
-    [regions, sceneWindow, timeline, events] = await Promise.all([
-      getRegions(),
-      getSceneWindow(),
-      getTimeline(),
-      getEvents(),
+    [sceneWindow, timeline, events] = await Promise.all([
+      getSceneWindow(region.id),
+      getTimeline(region.id),
+      getEvents(region.id),
     ]);
   } catch (err) {
     showError(`Failed to load data: ${err.message}`);
     throw err;
   }
 
-  const region = regions.find((r) => r.id === sceneWindow.region_id);
-  if (!region) {
-    showError(`region "${sceneWindow.region_id}" not found in regions.json`);
-    throw new Error(`region "${sceneWindow.region_id}" not found`);
+  if (sceneWindow.region_id !== region.id) {
+    showError(
+      `scene.json region_id "${sceneWindow.region_id}" does not match requested region "${region.id}"`
+    );
+    throw new Error(
+      `scene.json region_id mismatch: expected "${region.id}", got "${sceneWindow.region_id}"`
+    );
   }
 
   try {

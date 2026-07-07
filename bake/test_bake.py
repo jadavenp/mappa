@@ -1,5 +1,7 @@
+import json
 import os
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -218,32 +220,34 @@ class TestTimelineDerivation(unittest.TestCase):
 
 
 class TestFullBakeOnRealSource(unittest.TestCase):
-    """Exercises the actual data/source/port-alder.json end to end."""
+    """Exercises the actual data/source/*.json end to end (currently just
+    port-alder.json; Task 7 adds a second region file)."""
 
     @classmethod
     def setUpClass(cls):
         cls.result = bake.bake()
+        cls.region = cls.result["by_region"]["reg_port_alder"]
 
     def test_produces_expected_counts(self):
-        scene = self.result["scene"]
+        scene = self.region["scene"]
         self.assertEqual(len(scene["features"]), 15)
         state_count = sum(len(f["states"]) for f in scene["features"])
         self.assertEqual(state_count, 20)
-        self.assertEqual(len(self.result["events"]), 1)
+        self.assertEqual(len(self.region["events"]), 1)
         self.assertEqual(len(self.result["regions"]), 1)
 
     def test_timeline_is_sorted(self):
-        ts = [e["t"] for e in self.result["timeline"]]
+        ts = [e["t"] for e in self.region["timeline"]]
         self.assertEqual(ts, sorted(ts))
 
     def test_reversed_winding_source_feature_is_normalized_ccw(self):
-        scene = self.result["scene"]
+        scene = self.region["scene"]
         feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_12")
         ring = feature["states"][0]["representations"][0]["payload"]["footprint"]["coordinates"][0]
         self.assertTrue(geom.is_ccw(ring), "reversed-winding source ring must be normalized to CCW")
 
     def test_hole_feature_has_ccw_exterior_and_cw_hole(self):
-        scene = self.result["scene"]
+        scene = self.region["scene"]
         feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_11")
         coords = feature["states"][0]["representations"][0]["payload"]["footprint"]["coordinates"]
         self.assertEqual(len(coords), 2)
@@ -251,7 +255,7 @@ class TestFullBakeOnRealSource(unittest.TestCase):
         self.assertFalse(geom.is_ccw(coords[1]))
 
     def test_quake_destroyed_buildings_disappear_with_event_id(self):
-        timeline = self.result["timeline"]
+        timeline = self.region["timeline"]
         quake_disappears = [e for e in timeline if e["change"] == "disappear" and e.get("event_id") == "evt_1964quake"]
         self.assertEqual(len(quake_disappears), 4)
         feature_ids = {e["feature_id"] for e in quake_disappears}
@@ -261,18 +265,18 @@ class TestFullBakeOnRealSource(unittest.TestCase):
         # IMPORTANT-2 fix: destroyed states' interval.end is authored as
         # precision:instant matching the quake Event's own resolved time,
         # not a day-precision midnight approximation.
-        events_by_id = {e["id"]: e for e in self.result["events"]}
+        events_by_id = {e["id"]: e for e in self.region["events"]}
         quake_event = events_by_id["evt_1964quake"]
         expected_t = fd.resolve_fuzzy_date(quake_event["time"])
         self.assertEqual(expected_t, "1964-03-28T02:36:00Z")  # 17:36 AKST -09:00 -> UTC
 
-        timeline = self.result["timeline"]
+        timeline = self.region["timeline"]
         quake_disappears = [e for e in timeline if e["change"] == "disappear" and e.get("event_id") == "evt_1964quake"]
         for entry in quake_disappears:
             self.assertEqual(entry["t"], expected_t)
 
     def test_representation_assertion_is_inlined_full_object(self):
-        scene = self.result["scene"]
+        scene = self.region["scene"]
         feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_04")
         state = next(s for s in feature["states"] if s["id"] == "st_bld_04_a")
         assertion = state["representations"][0]["assertion"]
@@ -285,7 +289,7 @@ class TestFullBakeOnRealSource(unittest.TestCase):
         self.assertIsInstance(assertion["sources"], list)
 
     def test_name_assertion_is_inlined_full_object(self):
-        scene = self.result["scene"]
+        scene = self.region["scene"]
         feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_04")
         name_entry = feature["names"][0]
         assertion = name_entry["assertion"]
@@ -312,9 +316,73 @@ class TestAssertionResolution(unittest.TestCase):
         self.assertEqual(resolved, assertions["asr_x"])
 
     def test_output_files_written(self):
+        # Run bake() directly rather than relying on another test class's
+        # setUpClass — test classes execute in alphabetical order and this
+        # one (TestAssertionResolution) runs before TestFullBakeOnRealSource.
+        bake.bake()
         out_dir = bake.OUT_DIR
-        for name in ("regions.json", "scene.json", "timeline.json", "events.json"):
-            self.assertTrue(os.path.exists(os.path.join(out_dir, name)))
+        self.assertTrue(os.path.exists(os.path.join(out_dir, "regions.json")))
+        for name in ("scene.json", "timeline.json", "events.json"):
+            self.assertTrue(os.path.exists(os.path.join(out_dir, "reg_port_alder", name)))
+
+
+class TestMultiRegionLayout(unittest.TestCase):
+    """GA2: /v0/regions.json is an array; per-region files live under
+    /v0/{region_id}/. Exercises the real bake() (over data/source/*.json) plus
+    synthetic multi-source and duplicate-id cases via tmp source dirs."""
+
+    def test_regions_json_is_an_array_of_region_objects(self):
+        result = bake.bake()
+        regions = result["regions"]
+        self.assertIsInstance(regions, list)
+        self.assertGreaterEqual(len(regions), 1)
+        for region in regions:
+            self.assertIn("id", region)
+            self.assertIn("name", region)
+
+    def test_per_region_output_paths_exist_for_every_region(self):
+        result = bake.bake()
+        for region in result["regions"]:
+            region_dir = os.path.join(bake.OUT_DIR, region["id"])
+            for name in ("scene.json", "timeline.json", "events.json"):
+                path = os.path.join(region_dir, name)
+                self.assertTrue(os.path.exists(path), f"missing {path}")
+
+    def _write_region_source(self, tmp_dir, region_id, filename):
+        source = dict(bake.load_source())
+        source["region"] = dict(source["region"])
+        source["region"]["id"] = region_id
+        with open(os.path.join(tmp_dir, filename), "w") as f:
+            json.dump(source, f)
+
+    def test_duplicate_region_id_across_source_files_raises_bake_error(self):
+        with tempfile.TemporaryDirectory() as tmp_src, tempfile.TemporaryDirectory() as tmp_out:
+            self._write_region_source(tmp_src, "reg_dup", "a.json")
+            self._write_region_source(tmp_src, "reg_dup", "b.json")
+            paths = bake.source_paths(tmp_src)
+            with self.assertRaises(bake.BakeError) as ctx:
+                bake.bake(paths=paths, out_dir=tmp_out)
+            self.assertIn("reg_dup", str(ctx.exception))
+
+    def test_two_distinct_regions_both_bake_and_both_appear_in_regions_json(self):
+        with tempfile.TemporaryDirectory() as tmp_src, tempfile.TemporaryDirectory() as tmp_out:
+            self._write_region_source(tmp_src, "reg_alpha", "a.json")
+            self._write_region_source(tmp_src, "reg_beta", "b.json")
+            paths = bake.source_paths(tmp_src)
+            result = bake.bake(paths=paths, out_dir=tmp_out)
+            ids = {r["id"] for r in result["regions"]}
+            self.assertEqual(ids, {"reg_alpha", "reg_beta"})
+            for region_id in ids:
+                for name in ("scene.json", "timeline.json", "events.json"):
+                    self.assertTrue(
+                        os.path.exists(os.path.join(tmp_out, region_id, name))
+                    )
+
+    def test_empty_source_dir_raises_bake_error(self):
+        with tempfile.TemporaryDirectory() as tmp_src, tempfile.TemporaryDirectory() as tmp_out:
+            paths = bake.source_paths(tmp_src)
+            with self.assertRaises(bake.BakeError):
+                bake.bake(paths=paths, out_dir=tmp_out)
 
 
 if __name__ == "__main__":

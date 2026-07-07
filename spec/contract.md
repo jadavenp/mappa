@@ -1,18 +1,37 @@
 # Mappa Demo — Baked Data Contract (v0)
 
-This file freezes the shape of the four static JSON files served from
-`public/v0/` and consumed by the Babylon client (Task 3). It is the interface
-between `bake/bake.py` and the client — the client builds against this
-document verbatim, not against `bake.py`'s internals.
+This file freezes the shape of the static JSON files served from
+`public/v0/` and consumed by the Babylon client (Task 3; multi-region layout
+per Task 6/GA2). It is the interface between `bake/bake.py` and the client —
+the client builds against this document verbatim, not against `bake.py`'s
+internals.
 
-Scope: this is a **client-only static demo**. The four files below mirror the
+Scope: this is a **client-only static demo**. The files below mirror the
 *success* payload shapes of spec v0.5 §5.1's `GET /v0/regions`, `GET /v0/scene`
 (window mode), and `GET /v0/timeline`, plus an `events` file the timeline
 references by `event_id`. There is no server, no error envelope, no ETag, no
 pagination cap, no `/v0/features/{id}` endpoint. Where the full spec assumes a
 live API with more endpoints, this contract inlines what the client needs so
-the four static files are self-contained (see "Deviations from spec v0.5"
-below).
+the static files are self-contained (see "Deviations from spec v0.5" below).
+
+## Layout (multi-region, Task 6 / GA2)
+
+```
+public/v0/regions.json                      -- array, one entry per Region
+public/v0/{region_id}/scene.json             -- that region's window-mode scene
+public/v0/{region_id}/timeline.json          -- that region's change list
+public/v0/{region_id}/events.json            -- that region's events
+```
+
+One scheme, no legacy special case — `reg_port_alder`'s baked output lives at
+`public/v0/reg_port_alder/{scene,timeline,events}.json` exactly like any
+other region would. `bake/bake.py` loops over every file in
+`data/source/*.json`; each source file's `region.id` becomes its output
+directory name. A duplicate `region.id` across two source files is a bake-time
+`BakeError` (fail loud, no partial output, no silent merge/overwrite) — see §5.
+`src/api.js`'s `getSceneWindow(regionId)` / `getTimeline(regionId)` /
+`getEvents(regionId)` build these per-region paths; `getRegions()` alone stays
+at the top-level `regions.json` path (unchanged).
 
 All field names are taken verbatim from spec v0.5 §3 (Feature, State,
 Representation, Assertion, Event). Nothing is renamed or invented, except the
@@ -74,8 +93,10 @@ bake logic (not a re-derivation), so the two never disagree.
 
 ## 1. `public/v0/regions.json`
 
-Bare JSON array (mirrors "available Regions" from spec §5.1). One Region
-object, field names verbatim from spec §3.8.
+Bare JSON array (mirrors "available Regions" from spec §5.1) — one entry per
+region baked (currently one, `reg_port_alder`; Task 7 adds a second,
+`reg_anchorage_downtown`, with no change to this file's shape). Each entry is
+a full Region object, field names verbatim from spec §3.8.
 
 ```json
 [
@@ -120,9 +141,10 @@ Notes:
 
 ---
 
-## 2. `public/v0/scene.json` — window mode
+## 2. `public/v0/{region_id}/scene.json` — window mode
 
-Mirrors spec §5.1's window-mode `/v0/scene?from=&to=&frame=local`: **all
+One file per region (e.g. `public/v0/reg_port_alder/scene.json`), per §"Layout"
+above. Mirrors spec §5.1's window-mode `/v0/scene?from=&to=&frame=local`: **all
 States valid at any point in `[from, to)`, grouped by Feature.** This bake
 always covers the Region's whole time horizon (`from` = resolved
 `time_horizon.start`, `to` = resolved `time_horizon.end`).
@@ -269,10 +291,13 @@ rendering/scrubbing), per G2.
 
 ---
 
-## 3. `public/v0/timeline.json`
+## 3. `public/v0/{region_id}/timeline.json`
 
-Mirrors spec §5.1's `/v0/timeline`: a flat, **`t`-sorted** array of change
-entries, Events already joined in via `event_id`.
+One file per region (e.g. `public/v0/reg_port_alder/timeline.json`), per
+§"Layout" above. Mirrors spec §5.1's `/v0/timeline`: a flat, **`t`-sorted**
+array of change entries, Events already joined in via `event_id`. Entries
+only reference that region's own Features/Events — cross-region references
+never occur.
 
 ```json
 [
@@ -327,9 +352,11 @@ all four quake-destroyed buildings' `disappear` entries share this exact
 
 ---
 
-## 4. `public/v0/events.json`
+## 4. `public/v0/{region_id}/events.json`
 
-Bare JSON array of Event objects, spec §3.6 field names verbatim.
+One file per region (e.g. `public/v0/reg_port_alder/events.json`), per
+§"Layout" above. Bare JSON array of Event objects, spec §3.6 field names
+verbatim.
 
 ```json
 [
@@ -376,3 +403,19 @@ is called out here so Task 3 doesn't need to guess).
   "Deviations from spec v0.5" above). An unresolvable assertion id also
   raises `bake.BakeError` — bake never silently emits a dangling reference
   or drops assertion data.
+- **GA2 — unique region ids** — `bake.py` loops over every file in
+  `data/source/*.json`; if two source files declare the same `region.id`,
+  bake raises `bake.BakeError` naming the offending id and aborts before
+  writing `regions.json` — no silent merge, overwrite, or last-write-wins.
+
+---
+
+## Changelog
+
+- **Task 6 (multi-region layout, GA2):** `public/v0/scene.json`,
+  `timeline.json`, and `events.json` moved to `public/v0/{region_id}/...`;
+  `regions.json` stays at the top level and now holds one entry per baked
+  region (one today, `reg_port_alder`; a second, `reg_anchorage_downtown`,
+  arrives in Task 7). No field-level shape changes — this is a path-layout
+  change only. `src/api.js`'s per-region getters now take a `regionId`
+  argument; `getRegions()` is unchanged.

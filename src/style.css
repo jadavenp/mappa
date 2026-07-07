@@ -172,6 +172,37 @@ body {
   color: #ddd;
 }
 
+#topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: rgba(20, 20, 20, 0.9);
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  z-index: 10;
+}
+
+#topbar label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#topbar select {
+  background: #1c1c1c;
+  color: #ddd;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 13px;
+}
+
 #mappa-loading {
   position: fixed;
   inset: 0;
