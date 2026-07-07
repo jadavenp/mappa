@@ -6,6 +6,7 @@ import { getRegions, getSceneWindow, getTimeline, getEvents } from './api.js';
 import { initScene, buildFeatures, applyVisibility } from './scene.js';
 import { initTimeline } from './timeline.js';
 import { initPanel } from './panel.js';
+import { CreateScreenshotUsingRenderTargetAsync } from '@babylonjs/core/Misc/screenshotTools';
 
 function showLoading() {
   const el = document.createElement('div');
@@ -81,6 +82,17 @@ async function boot() {
           visibleCount,
           webglVersion: scene.getEngine().webGLVersion,
         };
+      },
+      // Verification-only helper: engine wasn't created with
+      // preserveDrawingBuffer, so a bare canvas.toDataURL() would be blank.
+      // Renders to an offscreen render target instead (no engine/production
+      // behavior change) and returns a PNG data URL.
+      screenshot(width = 1280, height = 720) {
+        return CreateScreenshotUsingRenderTargetAsync(
+          scene.getEngine(),
+          scene.activeCamera,
+          { width, height }
+        );
       },
     };
 
