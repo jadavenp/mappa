@@ -1,0 +1,124 @@
+[
+  {
+    "id": "reg_anchorage_downtown",
+    "name": "Anchorage \u2014 4th Ave & G\u2013I St",
+    "bounds": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -149.892,
+            61.2165
+          ],
+          [
+            -149.888,
+            61.2165
+          ],
+          [
+            -149.888,
+            61.2195
+          ],
+          [
+            -149.892,
+            61.2195
+          ],
+          [
+            -149.892,
+            61.2165
+          ]
+        ]
+      ]
+    },
+    "frame": {
+      "kind": "local_enu",
+      "origin": {
+        "lon": -149.89,
+        "lat": 61.218,
+        "elev_m": 31.0
+      },
+      "utm_zone": null,
+      "vertical_datum": "NAVD88"
+    },
+    "time_horizon": {
+      "start": {
+        "value": "1914",
+        "precision": "year",
+        "qualifier": "exact"
+      },
+      "end": {
+        "value": "1925",
+        "precision": "year",
+        "qualifier": "exact"
+      }
+    },
+    "default_camera": {
+      "lon": -149.89,
+      "lat": 61.2175,
+      "height_m": 420,
+      "heading_deg": 15,
+      "pitch_deg": -35
+    },
+    "status": "active"
+  },
+  {
+    "id": "reg_port_alder",
+    "name": "Port Alder",
+    "bounds": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -149.902,
+            61.1985
+          ],
+          [
+            -149.896,
+            61.1985
+          ],
+          [
+            -149.896,
+            61.2035
+          ],
+          [
+            -149.902,
+            61.2035
+          ],
+          [
+            -149.902,
+            61.1985
+          ]
+        ]
+      ]
+    },
+    "frame": {
+      "kind": "local_enu",
+      "origin": {
+        "lon": -149.9,
+        "lat": 61.2,
+        "elev_m": 0
+      },
+      "utm_zone": null,
+      "vertical_datum": "NAVD88"
+    },
+    "time_horizon": {
+      "start": {
+        "value": "1920",
+        "precision": "year",
+        "qualifier": "exact"
+      },
+      "end": {
+        "value": "1975",
+        "precision": "year",
+        "qualifier": "exact"
+      }
+    },
+    "default_camera": {
+      "lon": -149.9,
+      "lat": 61.2,
+      "height_m": 650,
+      "heading_deg": 25,
+      "pitch_deg": -32
+    },
+    "status": "active"
+  }
+]
