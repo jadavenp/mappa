@@ -6,6 +6,7 @@ import { getRegions, getSceneWindow, getTimeline, getEvents } from './api.js';
 import { initScene, buildFeatures, applyVisibility } from './scene.js';
 import { initTimeline } from './timeline.js';
 import { initPanel } from './panel.js';
+import { initInspector } from './inspector.js';
 import { CreateScreenshotUsingRenderTargetAsync } from '@babylonjs/core/Misc/screenshotTools';
 
 const DEFAULT_REGION_ID = 'reg_port_alder';
@@ -115,6 +116,8 @@ async function boot() {
 
     const panelEl = document.getElementById('panel');
     initPanel(panelEl, scene, entries, timeline, events);
+
+    initInspector(topbarEl, region, sceneWindow, timeline);
 
     const timelineEl = document.getElementById('timeline');
     const tl = initTimeline(timelineEl, region, events, (tMs) => {

@@ -6,6 +6,8 @@ A static Babylon.js demo scaffold: a Vite + vanilla JS client that renders a 3D 
 
 See `docs/demo-slice-plan.md` for the full implementation plan and the canonical spec folder for design details. Run `npm install && npm run dev` to start the local dev server, or `npm run build && npm run preview` to check the production build.
 
+The `reg_anchorage_downtown` region traces real buildings from Sanborn Fire Insurance Maps of Anchorage, Alaska (Sept 1916 sheet 1 and Sept 1922 sheet 3), Library of Congress, Sanborn Maps collection, public domain. The source sheets and full citations are viewable in-app via the "Data" button's Source tab. `reg_port_alder` is a fictional demo region with hand-invented data (no real source imagery).
+
 To deploy: `python3 bake/bake.py && npm run build`, then push the contents of `dist/` to the `gh-pages` branch (Pages serves that branch; pushing `main` alone does not update the site).
 
 ## Verified
