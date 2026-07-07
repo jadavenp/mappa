@@ -257,6 +257,60 @@ class TestFullBakeOnRealSource(unittest.TestCase):
         feature_ids = {e["feature_id"] for e in quake_disappears}
         self.assertEqual(feature_ids, {"ftr_bld_05", "ftr_bld_06", "ftr_bld_07", "ftr_bld_08"})
 
+    def test_quake_disappears_land_exactly_on_the_event_instant(self):
+        # IMPORTANT-2 fix: destroyed states' interval.end is authored as
+        # precision:instant matching the quake Event's own resolved time,
+        # not a day-precision midnight approximation.
+        events_by_id = {e["id"]: e for e in self.result["events"]}
+        quake_event = events_by_id["evt_1964quake"]
+        expected_t = fd.resolve_fuzzy_date(quake_event["time"])
+        self.assertEqual(expected_t, "1964-03-28T02:36:00Z")  # 17:36 AKST -09:00 -> UTC
+
+        timeline = self.result["timeline"]
+        quake_disappears = [e for e in timeline if e["change"] == "disappear" and e.get("event_id") == "evt_1964quake"]
+        for entry in quake_disappears:
+            self.assertEqual(entry["t"], expected_t)
+
+    def test_representation_assertion_is_inlined_full_object(self):
+        scene = self.result["scene"]
+        feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_04")
+        state = next(s for s in feature["states"] if s["id"] == "st_bld_04_a")
+        assertion = state["representations"][0]["assertion"]
+        self.assertIsInstance(assertion, dict, "Representation.assertion must be inlined, not a bare id string")
+        self.assertEqual(assertion["id"], "asr_st_bld_04_a_rep")
+        self.assertEqual(assertion["method"], "manual_trace")
+        self.assertEqual(assertion["status"], "verified")
+        self.assertIn("confidence", assertion)
+        self.assertIn("sources", assertion)
+        self.assertIsInstance(assertion["sources"], list)
+
+    def test_name_assertion_is_inlined_full_object(self):
+        scene = self.result["scene"]
+        feature = next(f for f in scene["features"] if f["id"] == "ftr_bld_04")
+        name_entry = feature["names"][0]
+        assertion = name_entry["assertion"]
+        self.assertIsInstance(assertion, dict, "Feature.names[].assertion must be inlined, not a bare id string")
+        self.assertEqual(assertion["method"], "manual_trace")
+        self.assertEqual(assertion["status"], "verified")
+        self.assertIn("confidence", assertion)
+        self.assertIn("sources", assertion)
+
+
+class TestAssertionResolution(unittest.TestCase):
+    def test_unresolvable_assertion_id_raises_bake_error(self):
+        with self.assertRaises(bake.BakeError):
+            bake.resolve_assertion("asr_does_not_exist", {})
+
+    def test_bake_error_is_a_value_error(self):
+        # contract.md §5 says overlap violations raise ValueError; BakeError
+        # subclasses ValueError so both are true (IMPORTANT-3 fix).
+        self.assertTrue(issubclass(bake.BakeError, ValueError))
+
+    def test_resolve_assertion_returns_full_object(self):
+        assertions = {"asr_x": {"id": "asr_x", "method": "manual_trace", "status": "verified", "confidence": 0.9, "sources": ["src_a"]}}
+        resolved = bake.resolve_assertion("asr_x", assertions)
+        self.assertEqual(resolved, assertions["asr_x"])
+
     def test_output_files_written(self):
         out_dir = bake.OUT_DIR
         for name in ("regions.json", "scene.json", "timeline.json", "events.json"):

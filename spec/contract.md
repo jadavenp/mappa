@@ -41,18 +41,24 @@ two explicitly-documented inlining deviations.
     **lower bound**: `1922-01-01T00:00:00Z`.
   - `"1922-09"` (precision `month`) → `1922-09-01T00:00:00Z`.
   - `"1964-03-27"` (precision `day`) → `1964-03-27T00:00:00Z`.
-  - `precision: "instant"` values already carry a full ISO 8601 datetime
-    with a UTC offset and resolve to that exact point, e.g.
-    `"1964-03-27T17:36:00-09:00"`.
+  - `precision: "instant"` values carry a full ISO 8601 datetime with a UTC
+    offset, e.g. `"1964-03-27T17:36:00-09:00"`, and **resolve to that same
+    instant normalized to UTC**: `"1964-03-28T02:36:00Z"`. Normalizing to a
+    single, comparable UTC representation (rather than preserving the
+    author's local offset) is what lets sort/compare/equality work
+    uniformly across year/month/day/instant resolutions, all of which are
+    UTC-suffixed strings.
   - This rule applies identically whether the value is used as an interval
     `start` or an interval `end` (spec §3.3 rule 2) — an interval ending
     `"1936"` is gone at `1936-01-01T00:00:00Z`, not `1936-12-31`.
 - **1964 quake instant, documented choice:** the source authors the event
-  time as `"1964-03-27T17:36:00-09:00"` (17:36 Alaska local time, historical
-  offset), matching spec §3.6's own worked example verbatim. This is the
-  canonical form baked into `events.json` and referenced by
-  `transition_out.event_id` — the client does not need to convert it; it is
-  already a fully qualified, comparable instant.
+  time and the four quake-destroyed States' `interval.end` identically, as
+  `{"value": "1964-03-27T17:36:00-09:00", "precision": "instant", "qualifier": "exact"}`
+  (17:36 Alaska local time, historical offset), matching spec §3.6's own
+  worked example verbatim. Authoring the State end at the *same* instant as
+  the Event (not a day-precision approximation) is what makes the timeline's
+  `disappear` entries for those four buildings land exactly on the quake's
+  resolved time, `"1964-03-28T02:36:00Z"` — see §3 below.
 
 ```json
 // Interval
@@ -273,10 +279,18 @@ entries, Events already joined in via `event_id`.
   { "t": "1920-05-01T00:00:00Z", "feature_id": "ftr_bld_03", "change": "appear" },
   { "t": "1921-01-01T00:00:00Z", "feature_id": "ftr_bld_01", "change": "appear" },
   { "t": "1940-01-01T00:00:00Z", "feature_id": "ftr_bld_04", "change": "alter" },
-  { "t": "1964-03-27T17:36:00-09:00", "feature_id": "ftr_bld_05", "change": "disappear", "event_id": "evt_1964quake" },
+  { "t": "1964-03-28T02:36:00Z", "feature_id": "ftr_bld_05", "change": "disappear", "event_id": "evt_1964quake" },
+  { "t": "1964-03-28T02:36:00Z", "feature_id": "ftr_bld_06", "change": "disappear", "event_id": "evt_1964quake" },
+  { "t": "1964-03-28T02:36:00Z", "feature_id": "ftr_bld_07", "change": "disappear", "event_id": "evt_1964quake" },
+  { "t": "1964-03-28T02:36:00Z", "feature_id": "ftr_bld_08", "change": "disappear", "event_id": "evt_1964quake" },
   { "t": "1965-01-01T00:00:00Z", "feature_id": "ftr_bld_08", "change": "appear" }
 ]
 ```
+
+(`1964-03-28T02:36:00Z` is `1964-03-27T17:36:00-09:00` normalized to UTC —
+all four quake-destroyed buildings' `disappear` entries share this exact
+`t`, since their States' `interval.end` is authored at the same instant as
+`evt_1964quake.time`, per §0 above.)
 
 - `t` is the **resolved** instant (ISO 8601 string, per §0 above) — unlike
   `scene.json`'s `State.interval`, which stays raw/unresolved, `timeline.json`
@@ -348,10 +362,17 @@ is called out here so Task 3 doesn't need to guess).
   and to validate G4.
 - **G4** — per Feature, resolved State intervals must be pairwise
   non-overlapping (half-open `[start, end)`, per spec §3.4). Violation
-  raises `ValueError` naming the offending `feature_id` and both State ids —
+  raises `bake.BakeError` (a `ValueError` subclass, so `except ValueError`
+  also catches it) naming the offending `feature_id` and both State ids —
   bake aborts, no partial output is written (fail loud, never fake).
 - **G9** — every footprint/extent ring is inspected via the shoelace
   formula; exterior rings are forced CCW and hole rings CW regardless of how
   they were authored in the source (the source dataset deliberately
   contains one reversed-winding exterior ring, `ftr_bld_12`, to exercise
   this).
+- **Assertion inlining** — every `Representation.assertion` and
+  `Feature.names[].assertion` id is resolved against the source's
+  `assertions` map and replaced with the full Assertion object (see
+  "Deviations from spec v0.5" above). An unresolvable assertion id also
+  raises `bake.BakeError` — bake never silently emits a dangling reference
+  or drops assertion data.

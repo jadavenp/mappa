@@ -23,7 +23,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_01_name"
+          "assertion": {
+            "id": "asr_ftr_bld_01_name",
+            "subject": {
+              "feature_id": "ftr_bld_01",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -103,7 +121,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "brick"
               },
-              "assertion": "asr_st_bld_01_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_01_a_rep",
+                "subject": {
+                  "state_id": "st_bld_01_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -130,7 +166,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_02_name"
+          "assertion": {
+            "id": "asr_ftr_bld_02_name",
+            "subject": {
+              "feature_id": "ftr_bld_02",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -212,7 +266,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_02_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_02_a_rep",
+                "subject": {
+                  "state_id": "st_bld_02_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -237,7 +309,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_03_name"
+          "assertion": {
+            "id": "asr_ftr_bld_03_name",
+            "subject": {
+              "feature_id": "ftr_bld_03",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -317,7 +407,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "concrete"
               },
-              "assertion": "asr_st_bld_03_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_03_a_rep",
+                "subject": {
+                  "state_id": "st_bld_03_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -342,7 +450,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_09_name"
+          "assertion": {
+            "id": "asr_ftr_bld_09_name",
+            "subject": {
+              "feature_id": "ftr_bld_09",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -422,7 +548,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "brick"
               },
-              "assertion": "asr_st_bld_09_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_09_a_rep",
+                "subject": {
+                  "state_id": "st_bld_09_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -447,7 +591,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_10_name"
+          "assertion": {
+            "id": "asr_ftr_bld_10_name",
+            "subject": {
+              "feature_id": "ftr_bld_10",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -527,7 +689,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_10_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_10_a_rep",
+                "subject": {
+                  "state_id": "st_bld_10_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -554,7 +734,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_11_name"
+          "assertion": {
+            "id": "asr_ftr_bld_11_name",
+            "subject": {
+              "feature_id": "ftr_bld_11",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -658,7 +856,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_11_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_11_a_rep",
+                "subject": {
+                  "state_id": "st_bld_11_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -683,7 +899,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_12_name"
+          "assertion": {
+            "id": "asr_ftr_bld_12_name",
+            "subject": {
+              "feature_id": "ftr_bld_12",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -763,7 +997,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "brick"
               },
-              "assertion": "asr_st_bld_12_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_12_a_rep",
+                "subject": {
+                  "state_id": "st_bld_12_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -788,7 +1040,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_04_name"
+          "assertion": {
+            "id": "asr_ftr_bld_04_name",
+            "subject": {
+              "feature_id": "ftr_bld_04",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -874,7 +1144,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_04_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_04_a_rep",
+                "subject": {
+                  "state_id": "st_bld_04_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         },
@@ -949,7 +1237,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "brick"
               },
-              "assertion": "asr_st_bld_04_b_rep"
+              "assertion": {
+                "id": "asr_st_bld_04_b_rep",
+                "subject": {
+                  "state_id": "st_bld_04_b",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.88,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -978,7 +1284,25 @@
               "qualifier": "exact"
             }
           },
-          "assertion": "asr_ftr_bld_05_name"
+          "assertion": {
+            "id": "asr_ftr_bld_05_name",
+            "subject": {
+              "feature_id": "ftr_bld_05",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -1064,7 +1388,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_05_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_05_a_rep",
+                "subject": {
+                  "state_id": "st_bld_05_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         },
@@ -1078,8 +1420,8 @@
               "qualifier": "exact"
             },
             "end": {
-              "value": "1964-03-27",
-              "precision": "day",
+              "value": "1964-03-27T17:36:00-09:00",
+              "precision": "instant",
               "qualifier": "exact"
             }
           },
@@ -1146,7 +1488,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_05_b_rep"
+              "assertion": {
+                "id": "asr_st_bld_05_b_rep",
+                "subject": {
+                  "state_id": "st_bld_05_b",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.87,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1173,7 +1533,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_06_name"
+          "assertion": {
+            "id": "asr_ftr_bld_06_name",
+            "subject": {
+              "feature_id": "ftr_bld_06",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -1194,8 +1572,8 @@
               "latest": "1926"
             },
             "end": {
-              "value": "1964-03-27",
-              "precision": "day",
+              "value": "1964-03-27T17:36:00-09:00",
+              "precision": "instant",
               "qualifier": "exact"
             }
           },
@@ -1262,7 +1640,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_06_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_06_a_rep",
+                "subject": {
+                  "state_id": "st_bld_06_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         },
@@ -1337,7 +1733,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_06_b_rep"
+              "assertion": {
+                "id": "asr_st_bld_06_b_rep",
+                "subject": {
+                  "state_id": "st_bld_06_b",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.91,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1362,7 +1776,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_07_name"
+          "assertion": {
+            "id": "asr_ftr_bld_07_name",
+            "subject": {
+              "feature_id": "ftr_bld_07",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -1381,8 +1813,8 @@
               "qualifier": "exact"
             },
             "end": {
-              "value": "1964-03-27",
-              "precision": "day",
+              "value": "1964-03-27T17:36:00-09:00",
+              "precision": "instant",
               "qualifier": "exact"
             }
           },
@@ -1449,7 +1881,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "brick"
               },
-              "assertion": "asr_st_bld_07_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_07_a_rep",
+                "subject": {
+                  "state_id": "st_bld_07_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         },
@@ -1524,7 +1974,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "concrete"
               },
-              "assertion": "asr_st_bld_07_b_rep"
+              "assertion": {
+                "id": "asr_st_bld_07_b_rep",
+                "subject": {
+                  "state_id": "st_bld_07_b",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1549,7 +2017,25 @@
             },
             "end": null
           },
-          "assertion": "asr_ftr_bld_08_name"
+          "assertion": {
+            "id": "asr_ftr_bld_08_name",
+            "subject": {
+              "feature_id": "ftr_bld_08",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {
@@ -1568,8 +2054,8 @@
               "qualifier": "exact"
             },
             "end": {
-              "value": "1964-03-27",
-              "precision": "day",
+              "value": "1964-03-27T17:36:00-09:00",
+              "precision": "instant",
               "qualifier": "exact"
             }
           },
@@ -1636,7 +2122,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_08_a_rep"
+              "assertion": {
+                "id": "asr_st_bld_08_a_rep",
+                "subject": {
+                  "state_id": "st_bld_08_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.9,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         },
@@ -1711,7 +2215,25 @@
                 "height_basis": "stories*3.4",
                 "material_class": "wood_frame"
               },
-              "assertion": "asr_st_bld_08_b_rep"
+              "assertion": {
+                "id": "asr_st_bld_08_b_rep",
+                "subject": {
+                  "state_id": "st_bld_08_b",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.89,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1732,7 +2254,25 @@
             "start": null,
             "end": null
           },
-          "assertion": "asr_ftr_rd_01_name"
+          "assertion": {
+            "id": "asr_ftr_rd_01_name",
+            "subject": {
+              "feature_id": "ftr_rd_01",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {},
@@ -1801,7 +2341,25 @@
                 "height_basis": "curb_reveal",
                 "material_class": "paved"
               },
-              "assertion": "asr_st_rd_01_a_rep"
+              "assertion": {
+                "id": "asr_st_rd_01_a_rep",
+                "subject": {
+                  "state_id": "st_rd_01_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.95,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1822,7 +2380,25 @@
             "start": null,
             "end": null
           },
-          "assertion": "asr_ftr_rd_02_name"
+          "assertion": {
+            "id": "asr_ftr_rd_02_name",
+            "subject": {
+              "feature_id": "ftr_rd_02",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {},
@@ -1891,7 +2467,25 @@
                 "height_basis": "curb_reveal",
                 "material_class": "paved"
               },
-              "assertion": "asr_st_rd_02_a_rep"
+              "assertion": {
+                "id": "asr_st_rd_02_a_rep",
+                "subject": {
+                  "state_id": "st_rd_02_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.95,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }
@@ -1912,7 +2506,25 @@
             "start": null,
             "end": null
           },
-          "assertion": "asr_ftr_water_01_name"
+          "assertion": {
+            "id": "asr_ftr_water_01_name",
+            "subject": {
+              "feature_id": "ftr_water_01",
+              "key": "name"
+            },
+            "value": "n/a",
+            "sources": [
+              "src_port_alder_directory"
+            ],
+            "method": "manual_trace",
+            "model_run": null,
+            "derived_from": null,
+            "status": "verified",
+            "confidence": 0.92,
+            "reviewed_by": "usr_jdavenport",
+            "reviewed_at": "2026-06-01T00:00:00Z",
+            "notes": "Name confirmed against townsite directory."
+          }
         }
       ],
       "tags": {},
@@ -1981,7 +2593,25 @@
                 "height_basis": "mean_sea_level",
                 "material_class": "water"
               },
-              "assertion": "asr_st_water_01_a_rep"
+              "assertion": {
+                "id": "asr_st_water_01_a_rep",
+                "subject": {
+                  "state_id": "st_water_01_a",
+                  "key": "representation"
+                },
+                "value": "footprint+height+material",
+                "sources": [
+                  "src_port_alder_1975_platbook"
+                ],
+                "method": "manual_trace",
+                "model_run": null,
+                "derived_from": null,
+                "status": "verified",
+                "confidence": 0.97,
+                "reviewed_by": "usr_jdavenport",
+                "reviewed_at": "2026-06-01T00:00:00Z",
+                "notes": "Traced directly from townsite plat / field notes."
+              }
             }
           ]
         }

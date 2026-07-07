@@ -27,7 +27,10 @@ OUT_DIR = os.path.join(REPO_ROOT, "public", "v0")
 RENOVATION_KINDS = ("renovated", "moved")
 
 
-class BakeError(Exception):
+class BakeError(ValueError):
+    """Raised on any bake-time validation failure (overlap, unresolvable
+    assertion reference, etc). Subclasses ValueError so `except ValueError`
+    also catches it, per spec/contract.md §5."""
     pass
 
 
@@ -67,10 +70,30 @@ def normalize_representation_geometry(representation):
     footprint["coordinates"] = geom.normalize_polygon_coordinates(footprint["coordinates"])
 
 
+def resolve_assertion(assertion_id, assertions_by_id):
+    """Inline the full Assertion object in place of an id reference
+    (spec/contract.md §2 "Deviations from spec v0.5"). Fails loud on an
+    unresolvable id — never silently drops or fakes assertion data."""
+    try:
+        return dict(assertions_by_id[assertion_id])
+    except KeyError:
+        raise BakeError(f"unresolvable assertion id {assertion_id!r}")
+
+
+def inline_representation_assertion(representation, assertions_by_id):
+    representation["assertion"] = resolve_assertion(representation["assertion"], assertions_by_id)
+
+
+def inline_name_assertions(names, assertions_by_id):
+    for name_entry in names:
+        name_entry["assertion"] = resolve_assertion(name_entry["assertion"], assertions_by_id)
+
+
 def bake_scene(source):
     region = source["region"]
     horizon_start = fd.resolve_fuzzy_date(region["time_horizon"]["start"])
     horizon_end = fd.resolve_fuzzy_date(region["time_horizon"]["end"])
+    assertions_by_id = source["assertions"]
 
     baked_features = []
     for feature in source["features"]:
@@ -83,13 +106,17 @@ def bake_scene(source):
             state = next(s for s in feature["states"] if s["id"] == state_id)
             for rep in state["representations"]:
                 normalize_representation_geometry(rep)
+                inline_representation_assertion(rep, assertions_by_id)
             states_out.append(state)
+
+        names_out = [dict(n) for n in feature["names"]]
+        inline_name_assertions(names_out, assertions_by_id)
 
         baked_features.append({
             "id": feature["id"],
             "type": feature["type"],
             "anchor": feature["anchor"],
-            "names": feature["names"],
+            "names": names_out,
             "tags": feature["tags"],
             "states": states_out,
         })
